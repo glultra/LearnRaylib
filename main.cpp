@@ -8,6 +8,11 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
+    // Triangle Attributes.
+    Vector2 vertex1 = Vector2{200, 200};
+    Vector2 vertex2 = Vector2{300, 200}; 
+    Vector2 vertex3 = Vector2{250, 100}; 
+
     // Render loop.
     while (!WindowShouldClose())
     {
@@ -18,7 +23,7 @@ int main(){
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            DrawRectangle(150, 50, 100, 100, ORANGE);
+            DrawTriangle(vertex1, vertex2, vertex3, ORANGE);
         EndDrawing();
     }
     
