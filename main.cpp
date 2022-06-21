@@ -8,6 +8,9 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
+    // Circle properties
+    Vector2 circle_center = Vector2{300, 300};
+
     // Render loop.
     while (!WindowShouldClose())
     {
@@ -18,7 +21,13 @@ int main(){
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            DrawRectangle(150, 50, 100, 100, ORANGE);
+            // DrawCircle(300, 300, 100, RED);
+            // DrawCircleV(circle_center, 100, ORANGE);
+            // DrawCircleGradient(circle_center.x, circle_center.y, 100, ORANGE, PINK);
+            // DrawCircleLines(circle_center.x, circle_center.y , 100, BLACK);
+            DrawCircleSector(circle_center, 100, 0, 270, 7, RED);
+            DrawCircleSectorLines(circle_center, 100, 0, 270, 7, BLACK);
+
         EndDrawing();
     }
     
