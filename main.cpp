@@ -8,10 +8,6 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
-    // Line properties.
-    Vector2 start_pos = Vector2{100, 100};
-    Vector2 end_pos = Vector2{200, 100};
-
     // Render loop.
     while (!WindowShouldClose())
     {
@@ -22,13 +18,12 @@ int main(){
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            // DrawLine(100, 100, 200, 200, RED);
-            // DrawLineV(Vector2{100, 100}, Vector2{200, 200}, BLACK);
-            // DrawLineEx(start_pos, end_pos, 10, BLACK);
-            // DrawLineBezier(start_pos, end_pos, 5, GREEN);
-            // DrawLineBezier(Vector2{200, 200}, Vector2{300, 100}, 5, PURPLE);
-            // DrawLineBezierCubic(start_pos, end_pos, GetMousePosition(), GetMousePosition(), 3, ORANGE);
-            DrawLineBezierQuad(start_pos, end_pos, GetMousePosition(), 3, GREEN);
+            // DrawLine(200, 200, 300, 300, RED);
+            // DrawLineEx(Vector2{200, 200}, Vector2{300, 200}, 6, RED);
+            // DrawLineBezier(Vector2{200, 200}, Vector2{300, 300}, 3, ORANGE);
+            // DrawLineBezier(Vector2{300, 300}, Vector2{400, 200}, 3, GREEN);
+            // DrawLineBezierCubic(Vector2{200, 200}, Vector2{400,200}, Vector2{250,300}, Vector2{350,100}, 3, BLUE);
+            DrawLineBezierQuad(Vector2{200, 200}, Vector2{400, 200}, GetMousePosition(), 3, BROWN);
         EndDrawing();
     }
     
