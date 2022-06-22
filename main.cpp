@@ -26,9 +26,10 @@ int main(){
     {
         // <----- UPDATE ----->
 
-        // Generating random pixels;
-        for(int i = 0; i < SCREEN_WIDHT; i++){
-            for(int j = 0; j < SCREEN_HEIGHT; j++){
+        // Generating random pixels
+        // maybe 600 is too much pixels u can make it 300 or less.
+        for(int i = 0; i < 300; i++){
+            for(int j = 0; j < 300; j++){
                 Vector2 pix;
                 pix.x = rand() % 600;
                 pix.y = rand() % 600;
