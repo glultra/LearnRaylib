@@ -18,7 +18,11 @@ int main(){
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            DrawRectangle(150, 50, 100, 100, ORANGE);
+            // DrawPoly(Vector2{300, 300}, 7, 50, 45, ORANGE);
+            // DrawPolyLines(Vector2{300, 300}, 7, 50, 45, BLACK);
+             DrawPolyLinesEx(Vector2{300, 300}, 7, 50, 45, 10, BLACK);
+             DrawEllipse(200, 200, 50, 70, RED);
+            DrawRing(Vector2{300, 430}, 70, 40, 0, 360, 100, RED);
         EndDrawing();
     }
     
