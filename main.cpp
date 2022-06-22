@@ -19,7 +19,11 @@ int main(){
             ClearBackground(WHITE);
             // <--- DRAW --->
             DrawRectangle(150, 50, 100, 100, ORANGE);
+
         EndDrawing();
     }
+
+    // De Initialization of OpenGL Context.
+    CloseWindow();
     
 }
