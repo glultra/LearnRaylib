@@ -11,6 +11,12 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
+    // Rectangle rect.
+    Rectangle rect{250, 250, 100, 100};
+    // Player rect.
+    Rectangle player{20, 100, 100, 100};
+
+    bool isColided = false;
 
     // Target FPS.
     SetTargetFPS(60);
@@ -19,14 +25,26 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
+        Vector2 mouse_pos = GetMousePosition();
+        player.x = mouse_pos.x - player.width / 2;
+        player.y = mouse_pos.y - player.height / 2;
+
+        if(CheckCollisionRecs(player, rect)){
+            isColided = true;
+        }else{
+            isColided = false;
+        }
+        
 
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            DrawRectangle(150, 50, 100, 100, ORANGE);
-
+            DrawRectangleRec(rect, RED);
+            DrawRectangleRec(player, BLUE);
+            if(isColided)
+                DrawText("Colided", player.x, player.y - 100, 30, GREEN);
         EndDrawing();
     }
 
