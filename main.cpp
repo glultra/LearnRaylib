@@ -19,15 +19,17 @@ int main(){
     float lastFrame = 0.0f;
 
     // Settarget fps.
-    SetTargetFPS(120); // 60 picture per second -> 1s = 60frame
+    SetTargetFPS(60); // 60 picture per second -> 1s = 60frame
 
     // Render loop.
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
         float time = GetTime();
-        float xValue = std::sin(time); // from -1.0 to +1.0
-        float xValuePos = (xValue / 2.0) + 0.5; // from 0.0 to 1.0
+        float xValue = std::cos(time); // from +1.0 to -1.0
+        float yValue = std::sin(time); // from -1.0 to +1.0
+        float xValuePos = (xValue / 2.0) + 0.5; // from 1.0 to 0.0
+        float yValuePos = (yValue / 2.0) + 0.5; // from 0.0 to 1.0
 
         deltaTime = time - lastFrame;
         lastFrame = time;
@@ -35,10 +37,8 @@ int main(){
         static int frame_count = 0; 
         frame_count++;
 
-        // rect.x = (50*xValuePos) * (2.5 + deltaTime);
-        if(IsKeyDown(KEY_RIGHT))
-            rect.x += 250 * deltaTime;
-
+        rect.x = 200 + (xValue * 200 );
+        rect.y = 200 + (yValue * 200 );
         
         // <----- RENDER ----->
         BeginDrawing();
