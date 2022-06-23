@@ -1,4 +1,7 @@
 #include <raylib.h>
+#include <iostream>
+#include <cmath>
+#include <string.h>
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -7,6 +10,10 @@
 int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
+
+
+    // Target FPS.
+    SetTargetFPS(60);
 
     // Render loop.
     while (!WindowShouldClose())
