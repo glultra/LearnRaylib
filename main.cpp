@@ -16,7 +16,7 @@ int main(){
     // Player rect.
     Rectangle player{20, 100, 100, 100};
 
-    bool isColided = false;
+    bool isCollided = false;
 
     // Target FPS.
     SetTargetFPS(60);
@@ -30,10 +30,12 @@ int main(){
         player.y = mouse_pos.y - player.height / 2;
 
         if(CheckCollisionRecs(player, rect)){
-            isColided = true;
+            isCollided = true;
         }else{
-            isColided = false;
+            isCollided = false;
         }
+
+        
         
 
         // <----- RENDER ----->
@@ -43,7 +45,7 @@ int main(){
             // <--- DRAW --->
             DrawRectangleRec(rect, RED);
             DrawRectangleRec(player, BLUE);
-            if(isColided)
+            if(isCollided)
                 DrawText("Colided", player.x, player.y - 100, 30, GREEN);
         EndDrawing();
     }
