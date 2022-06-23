@@ -26,8 +26,19 @@ int main(){
     {
         // <----- UPDATE ----->
         Vector2 mouse_pos = GetMousePosition();
-        player.x = mouse_pos.x - player.width / 2;
-        player.y = mouse_pos.y - player.height / 2;
+        // player.x = mouse_pos.x - player.width / 2;
+        // player.y = mouse_pos.y - player.height / 2;
+
+        // Moving player.
+        if(IsKeyDown(KEY_W))
+            player.y -= 5.0f ;
+        else if(IsKeyDown(KEY_S))
+            player.y += 5.0f ;
+        if(IsKeyDown(KEY_D))
+            player.x += 5.0f ;
+        else if(IsKeyDown(KEY_A))
+            player.x -= 5.0f ;
+
 
         if(CheckCollisionRecs(player, rect)){
             isCollided = true;
@@ -35,8 +46,25 @@ int main(){
             isCollided = false;
         }
 
-        
-        
+        // Collision With Window.
+        // 1-Detecting Collision from left side.
+        if(player.x < 0){
+            player.x = 0;
+        }
+        // 2- Detecting Collision from right side.
+        else if(player.x + player.width > SCREEN_WIDHT){
+            player.x = SCREEN_WIDHT - player.width;
+        }
+
+        // 3-Detecting Collision from top side.
+        if(player.y < 0){
+            player.y = 0;
+        }
+        // 4- Detecting Collision from bottom side.
+        else if(player.y + player.height > SCREEN_HEIGHT){
+            player.y = SCREEN_HEIGHT - player.height;
+        }
+
 
         // <----- RENDER ----->
         BeginDrawing();
