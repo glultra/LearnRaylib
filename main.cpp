@@ -14,6 +14,10 @@ int main(){
     // Rectangle object.
     Rectangle rect = Rectangle{250, 250, 100, 100};
 
+    // DeltaTime property
+    float deltaTime = 0.0f;
+    float lastFrame = 0.0f;
+
     // Settarget fps.
     SetTargetFPS(120); // 60 picture per second -> 1s = 60frame
 
@@ -25,10 +29,15 @@ int main(){
         float xValue = std::sin(time); // from -1.0 to +1.0
         float xValuePos = (xValue / 2.0) + 0.5; // from 0.0 to 1.0
 
+        deltaTime = time - lastFrame;
+        lastFrame = time;
+
         static int frame_count = 0; 
         frame_count++;
 
-        rect.x = 550 * xValuePos;
+        // rect.x = (50*xValuePos) * (2.5 + deltaTime);
+        if(IsKeyDown(KEY_RIGHT))
+            rect.x += 250 * deltaTime;
 
         
         // <----- RENDER ----->
