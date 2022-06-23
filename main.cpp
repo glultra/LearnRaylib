@@ -2,6 +2,7 @@
 #include <string.h>
 #include <iostream>
 #include <cmath>
+#include "src/timer.h"
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -14,10 +15,9 @@ int main(){
     // Rectangle object.
     Rectangle rect = Rectangle{250, 250, 100, 100};
 
-    // DeltaTime property
-    float deltaTime = 0.0f;
-    float lastFrame = 0.0f;
-
+    // Timer object.
+    Timer timer;
+    
     // Settarget fps.
     SetTargetFPS(60); // 60 picture per second -> 1s = 60frame
 
@@ -26,19 +26,10 @@ int main(){
     {
         // <----- UPDATE ----->
         float time = GetTime();
-        float xValue = std::cos(time); // from +1.0 to -1.0
-        float yValue = std::sin(time); // from -1.0 to +1.0
-        float xValuePos = (xValue / 2.0) + 0.5; // from 1.0 to 0.0
-        float yValuePos = (yValue / 2.0) + 0.5; // from 0.0 to 1.0
+        timer.UpdateTime(time);
 
-        deltaTime = time - lastFrame;
-        lastFrame = time;
-
-        static int frame_count = 0; 
-        frame_count++;
-
-        rect.x = 200 + (xValue * 200 );
-        rect.y = 200 + (yValue * 200 );
+        rect.x = 200 + (timer.xValue * 200 );
+        rect.y = 200 + (timer.yValue * 200 );
         
         // <----- RENDER ----->
         BeginDrawing();
@@ -48,7 +39,7 @@ int main(){
             DrawRectangleRec(rect, RED);
             DrawText(std::to_string(time).c_str(), 10, 10, 30, GREEN);
             DrawText("=", 150, 10, 30, GREEN);
-            DrawText(std::to_string(frame_count).c_str(), 200, 10, 30, RED);
+            DrawText(std::to_string(timer.frame_count).c_str(), 200, 10, 30, RED);
             DrawFPS(500, 10);
         EndDrawing();
     }
