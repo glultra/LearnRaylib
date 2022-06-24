@@ -51,6 +51,26 @@ int main(){
         float area = collidedRec.height * collidedRec.width;
         std::string msg_box;
 
+        if(isCollided){
+            // Checking for right side of the player and left side of the wall.
+            if(player.x < rect.x && player.x + player.width > rect.x && collidedRec.height > 10){
+                player.x = rect.x - player.width;
+            }
+            // Checking for bottom side of the player and top side of the wall.
+            if(player.y < rect.y && player.y + player.height > rect.y && collidedRec.width > 10){
+                player.y = rect.y - player.height;
+            }
+            // Checking for left side of the player and right side of the wall.
+            if(player.x > rect.x && player.x < rect.x + rect.width && collidedRec.height > 10){
+                player.x = rect.x + player.width;
+            }
+            // Checking for top side of the player and bottom side of the wall.
+            if(player.y > rect.y && player.y < rect.y + rect.height && collidedRec.width > 10){
+                player.y = rect.y + player.height;
+            }
+        }
+
+
         // Collision With Window.
         // 1-Detecting Collision from left side.
         if(player.x < 0){
