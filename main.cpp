@@ -29,9 +29,9 @@ int main(){
         // <----- UPDATE ----->
         player_center = GetMousePosition();
 
-        isCollided = CheckCollisionCircles(player_center, 50, circle_center, 100);
+        isCollided = CheckCollisionPointCircle(player_center, circle_center, 100 - 40);
 
-        if(isCollided){
+        if(!isCollided){
             // Find differences.
             dx = player_center.x - circle_center.x;
             dy = player_center.y - circle_center.y;
@@ -40,8 +40,8 @@ int main(){
             angle = atan2f(dy, dx);
 
             // Radius1 + Radius2
-            dxx = (50 + 100) * cosf(angle);
-            dyy = (50 + 100) * sinf(angle);
+            dxx = (100 - 40) * cosf(angle);
+            dyy = (100 - 40) * sinf(angle);
 
             // Sum with player position.
             player_center.x = circle_center.x + dxx;
@@ -53,8 +53,9 @@ int main(){
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            DrawCircleV(circle_center, 100, RED);
-            DrawCircleV(player_center, 50, BLUE);
+            DrawCircleV(circle_center, 100, GRAY);
+            DrawCircleV(player_center, 40, BLUE);
+            DrawCircleV(player_center, 15, BLACK);
 
         EndDrawing();
     }
