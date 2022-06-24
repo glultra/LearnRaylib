@@ -46,6 +46,11 @@ int main(){
             isCollided = false;
         }
 
+        // Collided Rectangle.
+        Rectangle collidedRec = GetCollisionRec(player, rect);
+        float area = collidedRec.height * collidedRec.width;
+        std::string msg_box;
+
         // Collision With Window.
         // 1-Detecting Collision from left side.
         if(player.x < 0){
@@ -73,6 +78,19 @@ int main(){
             // <--- DRAW --->
             DrawRectangleRec(rect, RED);
             DrawRectangleRec(player, BLUE);
+            DrawRectangleRec(collidedRec, YELLOW);
+            msg_box.append("Width :");
+            msg_box.append(std::to_string(collidedRec.width));
+            DrawText(msg_box.c_str(), 10, 10, 30, BLACK);
+            msg_box.clear();
+            msg_box.append("height :");
+            msg_box.append(std::to_string(collidedRec.height));
+            DrawText(msg_box.c_str(), 10, 60, 30, BLACK);
+            msg_box.clear();
+            msg_box.append("Area :");
+            msg_box.append(std::to_string(area));
+            DrawText(msg_box.c_str(), 10, 110, 30, BLACK);
+
             if(isCollided)
                 DrawText("Colided", player.x, player.y - 100, 30, GREEN);
         EndDrawing();
