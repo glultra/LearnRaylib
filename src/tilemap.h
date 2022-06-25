@@ -42,5 +42,6 @@ class Tilemap{
 
         // Protype functions.
         void Draw();
+        void CheckCollision(Rectangle &player);
 
 };
