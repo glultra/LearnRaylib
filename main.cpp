@@ -16,8 +16,6 @@ int main(){
     // Texture obj.
     Texture light = LoadTexture("./res/images/light.png");
     Color color_state = WHITE;
-    bool isCollided = false;
-
 
     // Colors
     Color colors[] = {
@@ -51,7 +49,10 @@ int main(){
         // Checking collision mouse with each button.
         for (int i = 0; i < buttons.size(); i++)
         {
-            isCollided = CheckCollisionPointRec(GetMousePosition(), buttons[i]);
+            // Check if Mouse hovered on the button.
+            bool isCollided = CheckCollisionPointRec(GetMousePosition(), buttons[i]);
+
+            // Check if hovered and clicked.
             if(isCollided && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
                 color_state = colors[i];
             }
@@ -66,11 +67,20 @@ int main(){
             DrawTexture(light, 170, 10, color_state);
             for (int i = 0; i < buttons.size(); i++)
             {
-                DrawRectangleRec(buttons[i], colors[i]);
-                isCollided = CheckCollisionPointRec(GetMousePosition(), buttons[i]);
-                if(isCollided){
+                // Check for hovering on the button.
+                bool isHovered = CheckCollisionPointRec(GetMousePosition(), buttons[i]);
+
+                // if Rollevered.
+                if(isHovered && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
+                    // I need to change the color.
+                    DrawRectangleRec(buttons[i], Fade(colors[i], 0.3f));
+                }
+                else
+                    DrawRectangleRec(buttons[i], colors[i]);
+                
+                if(isHovered){
                     DrawRectangleLinesEx(buttons[i], 4, 
-                        Fade(BLACK, 0.6)
+                        Fade(GRAY, 0.6)
                     );
                 }   
             }
