@@ -1,5 +1,10 @@
 # Raylib course.
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    body{
+        color:black;
+    }
+</style>
 > Output:
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/gif/23.gif">
@@ -7,4 +12,5 @@
 > <br>
 > <br>
 > <br>
-> <p >&copy;Mohammed Khalid</p>
+> <a class="btn"> &copy;Mohammed Khalid </a>
+
