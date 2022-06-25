@@ -48,7 +48,7 @@ class Tilemap{
         };
 
         // Protype functions.
-        void Draw();
+        void Draw(Color color);
         void CheckCollision(Rectangle &player);
         void SetPosition(Vector2 position);
         void SetOffset(Vector2 offset);

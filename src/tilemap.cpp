@@ -1,9 +1,9 @@
 #include "tilemap.h"
 
-void Tilemap::Draw(){
+void Tilemap::Draw(Color color){
     for (auto block : blocks)
     {
-        DrawRectangleRec(block, RED);   
+        DrawRectangleRec(block, color);   
     }
         
 }
