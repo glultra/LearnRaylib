@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include <string.h>
+#include "src/tilemap.h"
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -11,6 +12,8 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
+    // Tilemap object.
+    Tilemap tileblock(50, 2, 2);
 
     // Target FPS.
     SetTargetFPS(60);
@@ -25,7 +28,7 @@ int main(){
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            DrawRectangle(150, 50, 100, 100, ORANGE);
+            tileblock.Draw();
 
         EndDrawing();
     }
