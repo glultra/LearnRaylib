@@ -16,9 +16,12 @@ class Tilemap{
             {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
             {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
         };
-    public:
         std::vector<Rectangle> blocks;
-        Tilemap(float position, float xoffset, float yoffset){
+        Vector2 offset;
+        Vector2 position;
+
+        void InitTilemap()
+        {
             // Initialize each block's position.
             for (int i = 0; i < SIZE_Y; i++) // 8
             {
@@ -29,19 +32,25 @@ class Tilemap{
                         Rectangle block;
                         block.width     = 50;
                         block.height    = 50;
-                        block.x = position + (block.width + xoffset)    * j; 
-                        block.y = position + (block.height + yoffset)   * i;
+                        block.x = position.x + (block.width + offset.x)    * j; 
+                        block.y = position.y + (block.height + offset.y)   * i;
                         blocks.push_back(block);
                     }
-                    
                 }
-                
             }
-            
+        }
+
+    public:
+        Tilemap(Vector2 position, Vector2 offset){
+            SetPosition(position);
+            SetOffset(offset);
+            InitTilemap();
         };
 
         // Protype functions.
         void Draw();
         void CheckCollision(Rectangle &player);
+        void SetPosition(Vector2 position);
+        void SetOffset(Vector2 offset);
 
 };

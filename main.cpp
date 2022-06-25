@@ -3,6 +3,8 @@
 #include <cmath>
 #include <string.h>
 #include "src/tilemap.h"
+#include "src/timer.h"
+
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -16,7 +18,17 @@ int main(){
     Rectangle player = {200, 200, 50, 50};
 
     // Tilemap object.
-    Tilemap tileblock(50, 2, 2);
+    Tilemap tileblock(Vector2{0, 0}, Vector2{2,2});
+
+    // Camera2D object.
+    Camera2D camera{0};
+    camera.zoom = 1.0f;
+    camera.target  = Vector2{player.x, player.y};
+    camera.offset  = Vector2{GetScreenWidth()/2.0f, GetScreenHeight()/ 2.0f};
+    camera.rotation = 0.0f;
+
+    // Timer object.
+    Timer timer;
 
     // Target FPS.
     SetTargetFPS(60);
@@ -25,6 +37,10 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
+        float time = GetTime();
+        // Update timers;
+        timer.UpdateTime(time);
+
         if(IsKeyDown(KEY_W))
             player.y -= 5.0f;
         if(IsKeyDown(KEY_S))
@@ -37,14 +53,22 @@ int main(){
         // Check player Collision.
         tileblock.CheckCollision(player);
 
+        // Update camera target.
+        camera.target  = Vector2{player.x, player.y};
+
+        // Update Tileblock offset.
+        tileblock.SetOffset(Vector2{50 * timer.xValuePos, 2 });
+
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            tileblock.Draw();
-            DrawRectangleRec(player, DARKBLUE);
-
+            BeginMode2D(camera);
+                tileblock.Draw();
+                DrawRectangleRec(player, DARKBLUE);
+            EndMode2D();
+            
         EndDrawing();
     }
 
