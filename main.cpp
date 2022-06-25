@@ -61,7 +61,7 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawTexture(light, 170, 10, color_state);
             for (int i = 0; i < buttons.size(); i++)
