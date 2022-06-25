@@ -37,3 +37,13 @@ void Tilemap::CheckCollision(Rectangle& player){
     }
     
 }
+void Tilemap::SetPosition(Vector2 position){
+    this->position = position;
+    blocks.clear();
+    InitTilemap();
+}
+void Tilemap::SetOffset(Vector2 offset){
+    this->offset = offset;
+    blocks.clear();
+    InitTilemap();
+}

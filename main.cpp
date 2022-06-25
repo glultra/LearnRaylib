@@ -12,8 +12,6 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
-    // Tilemap object.
-    Tilemap tileblock(50, 2, 2);
 
     // Target FPS.
     SetTargetFPS(60);
@@ -28,7 +26,6 @@ int main(){
             // Clear Background
             ClearBackground(WHITE);
             // <--- DRAW --->
-            tileblock.Draw();
 
         EndDrawing();
     }
