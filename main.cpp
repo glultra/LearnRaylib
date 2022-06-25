@@ -65,8 +65,8 @@ int main(){
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             BeginMode2D(camera);
-                tileblock.Draw();
-                DrawRectangleRec(player, DARKBLUE);
+                tileblock.Draw(BLUE);
+                DrawRectangleRec(player, ORANGE);
             EndMode2D();
             
         EndDrawing();
