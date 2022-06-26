@@ -19,14 +19,14 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             // DrawCircle(300, 300, 100, RED);
             // DrawCircleV(circle_center, 100, ORANGE);
             // DrawCircleGradient(circle_center.x, circle_center.y, 100, ORANGE, PINK);
             // DrawCircleLines(circle_center.x, circle_center.y , 100, BLACK);
-            DrawCircleSector(circle_center, 100, 0, 270, 7, RED);
-            DrawCircleSectorLines(circle_center, 100, 0, 270, 7, BLACK);
+            DrawCircleSector(circle_center, 100, 0, 270, 100, BLUE);
+            DrawCircleSectorLines(circle_center, 100, 0, 270, 100, YELLOW);
 
         EndDrawing();
     }
