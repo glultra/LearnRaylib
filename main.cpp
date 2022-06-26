@@ -21,7 +21,7 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawTriangle(vertex1, vertex2, vertex3, ORANGE);
         EndDrawing();
