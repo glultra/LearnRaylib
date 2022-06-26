@@ -51,9 +51,9 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
-            DrawCircleV(circle_center, 100, GRAY);
+            DrawCircleV(circle_center, 100, WHITE);
             DrawCircleV(player_center, 40, BLUE);
             DrawCircleV(player_center, 15, BLACK);
 
