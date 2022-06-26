@@ -25,11 +25,11 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawLineBezier(Vector2{0, 0}, mouse_pos, 4, color);
             DrawRectangleV(Vector2{mouse_pos.x - 50, mouse_pos.y - 50}, Vector2{100, 100}, color);
-            DrawCircleV(mouse_pos, 30, WHITE);
+            DrawCircleV(mouse_pos, 30, BLUE);
 
         EndDrawing();
     }
