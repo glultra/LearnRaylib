@@ -16,13 +16,13 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             // DrawPoly(Vector2{300, 300}, 7, 50, 45, ORANGE);
             // DrawPolyLines(Vector2{300, 300}, 7, 50, 45, BLACK);
-             DrawPolyLinesEx(Vector2{300, 300}, 7, 50, 45, 10, BLACK);
-             DrawEllipse(200, 200, 50, 70, RED);
-            DrawRing(Vector2{300, 430}, 70, 40, 0, 360, 100, RED);
+             DrawPolyLinesEx(Vector2{300, 300}, 7, 50, 45, 10, BLUE);
+             DrawEllipse(200, 200, 50, 70, BLUE);
+            DrawRing(Vector2{300, 430}, 70, 40, 0, 360, 50, BLUE);
         EndDrawing();
     }
     
