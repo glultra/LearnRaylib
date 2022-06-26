@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cmath>
 #include "src/timer.h"
+#include <iomanip>
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -28,18 +29,18 @@ int main(){
         float time = GetTime();
         timer.UpdateTime(time);
 
-        rect.x = 200 + (timer.xValue * 200 );
-        rect.y = 200 + (timer.yValue * 200 );
+        rect.x = 200 + (timer.xValue * 150 );
+        rect.y = 200 + (timer.yValue * 150 );
         
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
-            DrawRectangleRec(rect, RED);
-            DrawText(std::to_string(time).c_str(), 10, 10, 30, GREEN);
-            DrawText("=", 150, 10, 30, GREEN);
-            DrawText(std::to_string(timer.frame_count).c_str(), 200, 10, 30, RED);
+            DrawRectangleRec(rect, BLUE);
+            time = round(time * 100) / 100;
+            DrawText(std::to_string(time).substr(0,3).append(" s =  ").c_str(), 10, 10, 30, GREEN);
+            DrawText(std::to_string(timer.frame_count).append(" FPS").c_str(), 120, 10, 30, PURPLE);
             DrawFPS(500, 10);
         EndDrawing();
     }
