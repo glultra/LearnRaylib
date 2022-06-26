@@ -69,10 +69,11 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawRectangleRec(rect, RED);
             DrawRectangleRec(player, BLUE);
+            DrawRectangleLinesEx(Rectangle{0, 0, SCREEN_WIDHT, SCREEN_HEIGHT}, 8, ORANGE);
             if(isCollided)
                 DrawText("Colided", player.x, player.y - 100, 30, GREEN);
         EndDrawing();
