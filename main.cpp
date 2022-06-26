@@ -74,22 +74,22 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawRectangleRec(rect, RED);
             DrawRectangleRec(player, BLUE);
             DrawRectangleRec(collidedRec, YELLOW);
             msg_box.append("Width :");
             msg_box.append(std::to_string(collidedRec.width));
-            DrawText(msg_box.c_str(), 10, 10, 30, BLACK);
+            DrawText(msg_box.c_str(), 10, 10, 30, WHITE);
             msg_box.clear();
             msg_box.append("height :");
             msg_box.append(std::to_string(collidedRec.height));
-            DrawText(msg_box.c_str(), 10, 60, 30, BLACK);
+            DrawText(msg_box.c_str(), 10, 60, 30, WHITE);
             msg_box.clear();
             msg_box.append("Area :");
             msg_box.append(std::to_string(area));
-            DrawText(msg_box.c_str(), 10, 110, 30, BLACK);
+            DrawText(msg_box.c_str(), 10, 110, 30, WHITE);
 
             if(isCollided)
                 DrawText("Colided", player.x, player.y - 100, 30, GREEN);
