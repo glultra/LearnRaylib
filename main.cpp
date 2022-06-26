@@ -20,7 +20,7 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawText("Hello World", 300, 300, 25, RED);
             DrawTextEx(font, "Hello world", Vector2{100, 50}, 45, 2, BLUE);
