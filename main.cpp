@@ -5,7 +5,6 @@
 #define SCREEN_TITLE    "Raylib"
 
 int main(){
-    InitWindow(600, 600, "Hello World");
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
@@ -23,9 +22,8 @@ int main(){
 
         // <----- RENDER ----->
         BeginDrawing();
-            ClearBackground(BLUE);
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             rect.y = 100;
             DrawRectangleGradientEx(rect, ORANGE, PURPLE, GREEN, PINK);
@@ -36,7 +34,7 @@ int main(){
 
             rect.y = 470;
             DrawRectangleRounded(rect, 100, 100, RED);
-            DrawRectangleRoundedLines(rect, 100, 100, 5, BLACK);
+            DrawRectangleRoundedLines(rect, 100, 100, 7, BLUE);
 
         EndDrawing();
     }
