@@ -34,7 +34,7 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawRectangleRec(rect, RED);
             DrawText(std::to_string(time).c_str(), 10, 10, 30, GREEN);
