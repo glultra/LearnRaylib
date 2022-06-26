@@ -16,7 +16,7 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawRectangle(150, 50, 100, 100, ORANGE);
         EndDrawing();
