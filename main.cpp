@@ -16,14 +16,14 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             // DrawLine(200, 200, 300, 300, RED);
             // DrawLineEx(Vector2{200, 200}, Vector2{300, 200}, 6, RED);
             // DrawLineBezier(Vector2{200, 200}, Vector2{300, 300}, 3, ORANGE);
             // DrawLineBezier(Vector2{300, 300}, Vector2{400, 200}, 3, GREEN);
             // DrawLineBezierCubic(Vector2{200, 200}, Vector2{400,200}, Vector2{250,300}, Vector2{350,100}, 3, BLUE);
-            DrawLineBezierQuad(Vector2{200, 200}, Vector2{400, 200}, GetMousePosition(), 3, BROWN);
+            DrawLineBezierQuad(Vector2{200, 200}, Vector2{400, 200}, GetMousePosition(), 3, BLUE);
         EndDrawing();
     }
     
