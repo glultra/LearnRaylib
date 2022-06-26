@@ -34,12 +34,12 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             // DrawTexture(pink_panther, 10, 10, isTurnedOn ? WHITE : BROWN);
             // DrawTextureEx(pink_panther, Vector2{10, 10}, 45, 1.0, WHITE);
             // DrawTextureRec(pink_panther, Rectangle{40, 0, 100, 100},Vector2{10, 10}, WHITE );
-            DrawTextureTiled(pink_panther, Rectangle{40, 0, 100, 100}, Rectangle{0, 0, 600, 600}, Vector2{10, 10}, 360 * xValue, 1, WHITE);
+            DrawTextureTiled(pink_panther, Rectangle{40, 0, 100, 100}, Rectangle{10, 0, 600, 600}, Vector2{10, 10}, 360 * xValue, 1, WHITE);
             // DrawTextureQuad(pink_panther, Vector2{5, 5}, Vector2{5, 5}, Rectangle{0, 0, 600, 600}, WHITE);
         EndDrawing();
     }
