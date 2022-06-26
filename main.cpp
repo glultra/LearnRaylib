@@ -35,15 +35,15 @@ int main(){
         static int frame_count = 0; 
         frame_count++;
 
-        // rect.x = (50*xValuePos) * (2.5 + deltaTime);
+        //rect.x = (50*xValuePos) * (2.5 + deltaTime);
         if(IsKeyDown(KEY_RIGHT))
-            rect.x += 250 * deltaTime;
+            rect.x += 250 * deltaTime; // Velocity = Distance / Delta Time
 
         
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawRectangleRec(rect, RED);
             DrawText(std::to_string(time).c_str(), 10, 10, 30, GREEN);
