@@ -5,6 +5,7 @@
 #define SCREEN_HEIGHT   600
 #define SCREEN_TITLE    "Raylib"
 
+
 int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
@@ -17,21 +18,21 @@ int main(){
     {
         // <----- UPDATE ----->
         if(IsKeyDown(KEY_UP))
-            rect_pos.y -= 1.0f;
+            rect_pos.y -= 0.4f;
         else if(IsKeyDown(KEY_DOWN))
-            rect_pos.y += 1.0f;
+            rect_pos.y += 0.4f;
 
         if(IsKeyDown(KEY_RIGHT))
-            rect_pos.x += 1.0f;
+            rect_pos.x += 0.4f;
         else if(IsKeyDown(KEY_LEFT))
-            rect_pos.x -= 1.0f;
+            rect_pos.x -= 0.4f;
 
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
-            DrawRectangleV(rect_pos, Vector2{100, 100}, RED);
+            DrawRectangleV(rect_pos, Vector2{100, 100}, BLUE);
         EndDrawing();
     }
 
