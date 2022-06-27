@@ -85,7 +85,7 @@ int main(){
                     DrawRectangleRounded(buttons[i], 0.3, 300, Fade(colors[i], 0.3f));
                 }
                 else
-                    DrawRectangleRounded(buttons[i], 0.3, 300, Fade(colors[i], 0.6f));
+                    DrawRectangleRounded(buttons[i], 0.3, 300, Fade(colors[i], 0.9f));
                 
                 if(isHovered){
                     DrawRectangleRoundedLines(buttons[i],0.3, 300, 4, Fade(WHITE, 0.6));
