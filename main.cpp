@@ -22,7 +22,7 @@ int main(){
             // DrawLineEx(Vector2{200, 200}, Vector2{300, 200}, 7,YELLOW);
             // DrawLineBezier(Vector2{200, 200}, Vector2{300, 300}, 7, ORANGE);
             // DrawLineBezier(Vector2{300, 300}, Vector2{400, 200}, 7, BLUE);
-            // DrawLineBezierQuad(Vector2{200, 200}, Vector2{400, 200}, GetMousePosition(), 3, ORANGE);
+            DrawLineBezierQuad(Vector2{200, 200}, Vector2{400, 200}, GetMousePosition(), 3, ORANGE);
             DrawLineBezierCubic(Vector2{200, 200}, Vector2{400, 200}, Vector2{250, 300}, Vector2{350, 100}, 3, PURPLE);
         EndDrawing();
     }
