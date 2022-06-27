@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <math.h>
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -12,17 +13,17 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
+        float time = GetTime();
+        float xValue = std::sin(time);
 
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
-            // DrawPoly(Vector2{300, 300}, 7, 50, 45, ORANGE);
-            // DrawPolyLines(Vector2{300, 300}, 7, 50, 45, BLACK);
-             DrawPolyLinesEx(Vector2{300, 300}, 7, 50, 45, 10, BLUE);
-             DrawEllipse(200, 200, 50, 70, BLUE);
-            DrawRing(Vector2{300, 430}, 70, 40, 0, 360, 50, BLUE);
+            DrawPoly(Vector2{300, 100}, 5, 100, 45 * xValue, LIME);
+            DrawPolyLines(Vector2{300, 300}, 9, 50, 180 * xValue, PINK);
+            DrawPolyLinesEx(Vector2{300, 450}, 9, 50, 270 * xValue, 7, GOLD);
         EndDrawing();
     }
     
