@@ -17,7 +17,7 @@ int main(){
     Texture light = LoadTexture("./res/images/light.png");
     Color color_state = WHITE;
 
-    // List o colors.
+    // List of colors.
     Color colors[] = {
         YELLOW, BLUE, GREEN, PINK, ORANGE,
         PURPLE, GOLD, BEIGE, SKYBLUE, LIME,
@@ -50,6 +50,7 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
+        Vector2 mouse_pos = GetMousePosition();
 
         // Checking collision mouse with each button.
         for (int i = 0; i < buttons.size(); i++)
@@ -75,6 +76,8 @@ int main(){
             {
                 // Check for hovering on the button.
                 bool isHovered = CheckCollisionPointRec(GetMousePosition(), buttons[i]);
+                std::string color_name = color_names[i];
+                float centeredX = MeasureText(color_name.c_str(), 10)/2; 
 
                 // if Rollevered.
                 if(isHovered && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
@@ -82,11 +85,12 @@ int main(){
                     DrawRectangleRounded(buttons[i], 0.3, 300, Fade(colors[i], 0.3f));
                 }
                 else
-                    DrawRectangleRounded(buttons[i], 0.3, 300, colors[i]);
+                    DrawRectangleRounded(buttons[i], 0.3, 300, Fade(colors[i], 0.6f));
                 
                 if(isHovered){
-                    DrawRectangleRoundedLines(buttons[i],0.3, 300, 4, Fade(BLACK, 0.6));
-                    DrawText(color_names[i].c_str(), GetMousePosition().x - MeasureText(color_names[i].c_str(), 10)/2, GetMousePosition().y - 30, 10, BLACK);
+                    DrawRectangleRoundedLines(buttons[i],0.3, 300, 4, Fade(WHITE, 0.6));
+                    DrawRectangleRounded( Rectangle{mouse_pos.x - centeredX - 3, mouse_pos.y - 33, 10 + centeredX * 2, 20}, 0.3, 300, Fade(GRAY, 0.9));
+                    DrawText(color_name.c_str(), mouse_pos.x - centeredX, mouse_pos.y - 30, 10, colors[i]);
                 }   
             }
 
