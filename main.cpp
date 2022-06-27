@@ -63,6 +63,7 @@ int main(){
         BeginDrawing();
             // Clear Background
             ClearBackground(Color{13,17,23,255});
+            // ClearBackground(WHITE);
             // <--- DRAW --->
             DrawTexture(light, 170, 20, color_state);
             for (int i = 0; i < buttons.size(); i++)
@@ -73,15 +74,13 @@ int main(){
                 // if Rollevered.
                 if(isHovered && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
                     // I need to change the color.
-                    DrawRectangleRec(buttons[i], Fade(colors[i], 0.3f));
+                    DrawRectangleRounded(buttons[i], 0.3, 300, Fade(colors[i], 0.3f));
                 }
                 else
-                    DrawRectangleRec(buttons[i], colors[i]);
+                    DrawRectangleRounded(buttons[i], 0.3, 300, colors[i]);
                 
                 if(isHovered){
-                    DrawRectangleLinesEx(buttons[i], 4, 
-                        Fade(GRAY, 0.6)
-                    );
+                    DrawRectangleRoundedLines(buttons[i],0.3, 300, 4, Fade(WHITE, 0.6));
                 }   
             }
 
