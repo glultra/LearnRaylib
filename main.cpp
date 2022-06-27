@@ -21,5 +21,7 @@ int main(){
             DrawRectangle(150, 50, 100, 100, ORANGE);
         EndDrawing();
     }
-    
+
+    // De-Initialize OpenGL Context
+    CloseWindow();
 }
