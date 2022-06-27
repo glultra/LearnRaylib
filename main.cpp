@@ -17,10 +17,15 @@ int main(){
     Texture light = LoadTexture("./res/images/light.png");
     Color color_state = WHITE;
 
-    // Colors
+    // List o colors.
     Color colors[] = {
         YELLOW, BLUE, GREEN, PINK, ORANGE,
         PURPLE, GOLD, BEIGE, SKYBLUE, LIME,
+    };
+
+    std::string color_names[] = {
+        "YELLOW", "BLUE", "GREEN", "PINK", "ORANGE",
+        "PURPLE", "GOLD", "BEIGE", "SKYBLUE", "LIME",
     };
 
     // Buttons.
@@ -62,8 +67,8 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(Color{13,17,23,255});
-            // ClearBackground(WHITE);
+            // ClearBackground(Color{13,17,23,255});
+            ClearBackground(WHITE);
             // <--- DRAW --->
             DrawTexture(light, 170, 20, color_state);
             for (int i = 0; i < buttons.size(); i++)
@@ -80,7 +85,8 @@ int main(){
                     DrawRectangleRounded(buttons[i], 0.3, 300, colors[i]);
                 
                 if(isHovered){
-                    DrawRectangleRoundedLines(buttons[i],0.3, 300, 4, Fade(WHITE, 0.6));
+                    DrawRectangleRoundedLines(buttons[i],0.3, 300, 4, Fade(BLACK, 0.6));
+                    DrawText(color_names[i].c_str(), GetMousePosition().x - MeasureText(color_names[i].c_str(), 10)/2, GetMousePosition().y - 30, 10, BLACK);
                 }   
             }
 
