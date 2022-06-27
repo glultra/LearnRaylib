@@ -8,19 +8,18 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
-    // Texture 2D.
-    Texture2D pink_panther = LoadTexture("./res/images/pink-panther.png");
+    // Loafding Texture 2D.
+    Texture2D pink_panther = LoadTexture("./res/images/pink_panther.png");
 
     // Render loop.
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
-        // Toggle button (NO GUI yet).
+        // Make a toggle.
         static bool isTurnedOn = false;
+
         if(IsKeyPressed(KEY_SPACE)){
-            // if true return false.
-            // else if false return true.
-            isTurnedOn = isTurnedOn ? false : true; // if is true returns first case else returns second case.
+            isTurnedOn = isTurnedOn ? false : true; // i want to reverse the button -> if true make it false  if false make it true.
         }
 
         // <----- RENDER ----->
@@ -28,8 +27,10 @@ int main(){
             // Clear Background
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
-            DrawTexture(pink_panther, 10, 10, isTurnedOn ? WHITE : BROWN);
+            DrawTexture(pink_panther, 50, 50, isTurnedOn ?  WHITE : BROWN);
         EndDrawing();
     }
-    
+
+    // De-Initialize OpenGL Context
+    CloseWindow();
 }
