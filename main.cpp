@@ -16,8 +16,15 @@ int main(){
     std::vector<Vector2> pixels;
     Vector2 pixel = Vector2{300, 300};
 
+    // Camera 2D.
+    Camera2D camera = Camera2D{0};
+    camera.zoom = 1.0f;
+    camera.offset = Vector2{SCREEN_WIDHT/2, SCREEN_HEIGHT/2};
+    camera.rotation = 0;
+    camera.target = pixel;
+
     // Target FPS.
-    // SetTargetFPS(60);
+    SetTargetFPS(120);
 
     // Render loop.
     while (!WindowShouldClose())
@@ -26,9 +33,9 @@ int main(){
 
         static int interval = 0;
         static int currentDir = 0;
-        const float step = 0.45f;
+        const float step = 1.0f;
         interval++;
-        if(interval % 5 == 0){
+        if(interval % 15 == 0){
             currentDir = GetRandomValue(0, 4);
         }
 
@@ -52,6 +59,11 @@ int main(){
             break;
         }
 
+        // Update Camera
+        camera.zoom += GetMouseWheelMoveV().y;
+        camera.target = pixel;
+        camera.rotation = std::sin(GetTime()) * 45;
+
         pixels.push_back(pixel);
 
         // <----- RENDER ----->
@@ -61,11 +73,13 @@ int main(){
             // <--- DRAW --->
             // DrawPixel(pixel.x, pixel.y, RED);
             // DrawRectangleV(pixel, Vector2{30, 30}, RED);
-            for (auto pix : pixels)
-            {
-                DrawPixel(pix.x, pix.y, RED);
-                // DrawRectangleV(pix, Vector2{30, 30}, RED); 
-            }
+            BeginMode2D(camera);
+                for (auto pix : pixels)
+                {
+                    // DrawPixel(pix.x, pix.y, BLUE);
+                    DrawRectangleV(pix, Vector2{5, 5}, BLUE); 
+                }
+            EndMode2D();
             
         EndDrawing();
     }
