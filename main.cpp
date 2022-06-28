@@ -2,16 +2,40 @@
 #include <iostream>
 #include <cmath>
 #include <string.h>
-#include "src/tilemap.h"
+#include <vector>
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
 #define SCREEN_TITLE    "Raylib"
 
+#define BLOCK_SIZE      50
+
+using namespace std;
+
 int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
+    // Tile blocks.
+    vector<Rectangle> blocks;
+
+    // Set each block's Position.
+    for (int  i = 0; i < SCREEN_WIDHT / BLOCK_SIZE; i++)
+    {
+        for (int j = 0; j < SCREEN_HEIGHT / BLOCK_SIZE; j++)
+        {
+            Rectangle block;
+            block.width = BLOCK_SIZE; block.height = BLOCK_SIZE;
+            block.x  = 0.0f + (BLOCK_SIZE) * j;
+            block.y  = 0.0f + (BLOCK_SIZE) * i;
+            blocks.push_back(block);
+        }
+        
+    }
+
+    // Tile Color state.
+    Color tile_color = RED;
+    
 
     // Target FPS.
     SetTargetFPS(60);
@@ -20,12 +44,31 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
+        float time = GetTime();
+        static int frame_count = 0;
+        frame_count++; // 1s = 60f
+
+        // When ever it passes each two second.
+        if(frame_count % 120 == 0){
+            tile_color.r = GetRandomValue(0, 255);
+            tile_color.g = GetRandomValue(0, 255);
+            tile_color.b = GetRandomValue(0, 255);
+            tile_color.a = 255;
+        }
 
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
+            float fade_rate = 1.0f;
+            for (int i = 0; i < blocks.size(); i++)
+            {
+                fade_rate = i % (SCREEN_WIDHT/BLOCK_SIZE) == 0 ? fade_rate-=0.07f : fade_rate;
+                DrawRectangleRec(blocks[i], Fade(tile_color, fade_rate));
+               
+            }
+            
 
         EndDrawing();
     }
