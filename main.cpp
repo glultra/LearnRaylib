@@ -2,13 +2,15 @@
 #include <iostream>
 #include <cmath>
 #include <string.h>
-#include "src/tilemap.h"
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
 #define SCREEN_TITLE    "Raylib"
 
 int main(){
+    // Enable MSAA 4X.
+    SetConfigFlags(FLAG_MSAA_4X_HINT);
+    
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
