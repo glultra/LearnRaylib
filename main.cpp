@@ -25,7 +25,7 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
-        // Case 1: Responsive Statcily depends to the image size.
+        // Case 1: Responsive Staticilly depends to the image size.
         // SetWindowSize(texture.width, texture.height);
         // Case 2: Responsive By Window Size.
         texture.width = GetScreenWidth();
