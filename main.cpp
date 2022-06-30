@@ -9,11 +9,13 @@
 #define SCREEN_TITLE    "Raylib"
 
  bool isButtonHover;
+ bool isButtonHover2;
  bool isSliderHover;
 
 // Gui function protypes.
 void GuiSliderMusic(Rectangle rec, Music& music, Color color);
 void GuiPlayButton(Vector2 position, Music& music, float radius, Color bgColor, Color fgColor);
+void GuiPlayButton(Vector2 position, Music& music,Texture texture, float radius, Color bgColor, Color fgColor);
 
 int main(){
     // Enable MSAA 4X.
@@ -33,13 +35,21 @@ int main(){
     PlayMusicStream(music);
 
     // Slider rec.
-    Rectangle seek_rec{50, 400, 300, 20};
+    Rectangle seek_rec{50, 400, 300, 10};
     seek_rec.x = GetScreenWidth() / 2.0f - seek_rec.width/2.0f;
 
     // Texture2D.
     Texture2D texture = LoadTexture("./res/images/holyquraan.png");
     texture.width   = 212;
     texture.height  = 212;
+
+    Texture2D next_track = LoadTexture("./res/icons/forward.png");
+    next_track.width   = 35;
+    next_track.height  = 35;
+
+    Texture2D back_track = LoadTexture("./res/icons/backward.png");
+    back_track.width   = 35;
+    back_track.height  = 35;
 
 
     // Target FPS.
@@ -52,7 +62,7 @@ int main(){
         float tex_centerx = GetScreenWidth()/2.0f  - texture.width/2.0f;
         float tex_centery = GetScreenWidth()/2.0f  - texture.height/2.0f;
 
-        if(isButtonHover || isSliderHover){
+        if(isButtonHover || isSliderHover || isButtonHover2){
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
         }else{
             SetMouseCursor(MOUSE_CURSOR_DEFAULT);
@@ -68,6 +78,8 @@ int main(){
             // <--- DRAW --->
             DrawTexture(texture, tex_centerx, tex_centery - 100, WHITE);
             GuiPlayButton(Vector2{GetScreenWidth()/2.0f, GetScreenHeight()/2.0f + 200}, music, 50, SKYBLUE, WHITE);
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f + 100, GetScreenHeight()/2.0f + 200}, music, next_track, 35, SKYBLUE, WHITE);
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f - 100, GetScreenHeight()/2.0f + 200}, music, back_track, 35, SKYBLUE, WHITE);
             GuiSliderMusic(seek_rec, music, SKYBLUE);
             DrawText("Al-Qari'ah", GetScreenWidth()/2.0f - MeasureText("Al-Qari'ah", 30)/2.0f, GetScreenHeight()/2.0f + 50, 30, WHITE);
         EndDrawing();
@@ -149,4 +161,21 @@ void GuiPlayButton(Vector2 position, Music& music, float radius, Color bgColor, 
         );
     }
 
+}
+
+void GuiPlayButton(Vector2 position, Music& music,Texture texture, float radius, Color bgColor, Color fgColor){
+    // Update 
+    static bool isPlayed = true;
+    isButtonHover2 = CheckCollisionPointCircle(position, GetMousePosition(), radius);
+    float point = radius / 3.0f; 
+
+    if(isButtonHover2 && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
+        isPlayed = isPlayed ? false : true;
+    }
+
+    // Render
+    DrawCircleV(position, radius, isButtonHover2 ? bgColor: Fade(bgColor, 0.7f));
+
+    DrawTexture(texture, position.x - radius/2.0f, position.y - radius/2.0f, fgColor);
+    
 }
