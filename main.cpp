@@ -11,11 +11,11 @@
  bool isButtonHover;
  bool isButtonHover2;
  bool isSliderHover;
-
+ int current_item = 1; // default 
 // Gui function protypes.
 void GuiSliderMusic(Rectangle rec, Music& music, Color color);
 void GuiPlayButton(Vector2 position, Music& music, float radius, Color bgColor, Color fgColor);
-void GuiPlayButton(Vector2 position, Music& music,Texture texture, float radius, Color bgColor, Color fgColor);
+void GuiPlayButton(Vector2 position, Music music[],Texture texture, float radius, Color bgColor, Color fgColor, std::string action);
 
 int main(){
     // Enable MSAA 4X.
@@ -28,11 +28,21 @@ int main(){
     InitAudioDevice();
 
     // Music object.
-    Music music = LoadMusicStream("./res/music/quraan/101.mp3");
+    Music quraan_lists[] = { 
+        LoadMusicStream("./res/music/quraan/100.mp3"),
+        LoadMusicStream("./res/music/quraan/101.mp3"), // Default
+        LoadMusicStream("./res/music/quraan/102.mp3"),
+    };
+
+    std::string surat_names[] = {
+        "100: Al-'Adiyat",
+        "101: Al-Qari'ah",
+        "102: At-Takathur",
+    };
+
     // music.looping = false;
 
-    SeekMusicStream(music, 10);
-    PlayMusicStream(music);
+    PlayMusicStream(quraan_lists[1]);
 
     // Slider rec.
     Rectangle seek_rec{50, 400, 300, 10};
@@ -69,7 +79,7 @@ int main(){
         }
         
         // Update Music Buffer.
-        UpdateMusicStream(music);
+        UpdateMusicStream(quraan_lists[current_item]);
 
         // <----- RENDER ----->
         BeginDrawing();
@@ -77,11 +87,11 @@ int main(){
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             DrawTexture(texture, tex_centerx, tex_centery - 100, WHITE);
-            GuiPlayButton(Vector2{GetScreenWidth()/2.0f, GetScreenHeight()/2.0f + 200}, music, 50, SKYBLUE, WHITE);
-            GuiPlayButton(Vector2{GetScreenWidth()/2.0f + 100, GetScreenHeight()/2.0f + 200}, music, next_track, 35, SKYBLUE, WHITE);
-            GuiPlayButton(Vector2{GetScreenWidth()/2.0f - 100, GetScreenHeight()/2.0f + 200}, music, back_track, 35, SKYBLUE, WHITE);
-            GuiSliderMusic(seek_rec, music, SKYBLUE);
-            DrawText("Al-Qari'ah", GetScreenWidth()/2.0f - MeasureText("Al-Qari'ah", 30)/2.0f, GetScreenHeight()/2.0f + 50, 30, WHITE);
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f, GetScreenHeight()/2.0f + 200}, quraan_lists[current_item], 50, SKYBLUE, WHITE);
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f + 100, GetScreenHeight()/2.0f + 200}, quraan_lists, next_track, 35, SKYBLUE, WHITE, "next");
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f - 100, GetScreenHeight()/2.0f + 200}, quraan_lists, back_track, 35, SKYBLUE, WHITE, "back");
+            GuiSliderMusic(seek_rec, quraan_lists[current_item], SKYBLUE);
+            DrawText(surat_names[current_item].c_str(), GetScreenWidth()/2.0f - MeasureText(surat_names[current_item].c_str(), 30)/2.0f, GetScreenHeight()/2.0f + 50, 30, WHITE);
         EndDrawing();
     }
 
@@ -163,14 +173,28 @@ void GuiPlayButton(Vector2 position, Music& music, float radius, Color bgColor, 
 
 }
 
-void GuiPlayButton(Vector2 position, Music& music,Texture texture, float radius, Color bgColor, Color fgColor){
+void GuiPlayButton(Vector2 position, Music music[],Texture texture, float radius, Color bgColor, Color fgColor, std::string action)
+{
     // Update 
-    static bool isPlayed = true;
     isButtonHover2 = CheckCollisionPointCircle(position, GetMousePosition(), radius);
-    float point = radius / 3.0f; 
+    
+    if(isButtonHover2){
+        SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
+    }
 
     if(isButtonHover2 && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
-        isPlayed = isPlayed ? false : true;
+        if(action == "next")
+            if(current_item < 2)
+            {
+                current_item++;
+                PlayMusicStream(music[current_item]);
+            }
+            
+        if(action == "back")
+            if(current_item > 0){
+                current_item--;
+                PlayMusicStream(music[current_item]);
+            }
     }
 
     // Render
