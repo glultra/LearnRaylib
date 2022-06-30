@@ -10,6 +10,7 @@
 
 // Gui function protypes.
 void GuiSliderMusic(Rectangle rec, Music& music, Color color);
+void GuiPlayButton(Vector2 position, Music& music, float radius, Color bgColor, Color fgColor);
 
 int main(){
     // Enable MSAA 4X.
@@ -22,7 +23,7 @@ int main(){
     InitAudioDevice();
 
     // Music object.
-    Music music = LoadMusicStream("./res/music/wisdom.mp3");
+    Music music = LoadMusicStream("./res/music/quraan/101.mp3");
     // music.looping = false;
 
     PlayMusicStream(music);
@@ -57,6 +58,7 @@ int main(){
             // <--- DRAW --->
             DrawTexture(texture, tex_centerx, tex_centery - 100, WHITE);
             GuiSliderMusic(seek_rec, music, SKYBLUE);
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f, GetScreenHeight()/2.0f + 200}, music, 50, DARKGRAY, WHITE);
         EndDrawing();
     }
 
@@ -79,7 +81,7 @@ void GuiSliderMusic(Rectangle rec, Music& music, Color color){
         slider.width = dx;
         SeekMusicStream(music, dx / (rec.width / max_second)); // Responsive depends to rec.width.
     }else{
-        ResumeMusicStream(music);
+        // ResumeMusicStream(music);
         slider.width = (rec.width / max_second) * time_played; // Responsive depends to rec.width.
     }
 
@@ -105,4 +107,34 @@ void GuiSliderMusic(Rectangle rec, Music& music, Color color){
     ss << (int)max_second / 60 << ":"; // first show mins
     ss << (int)max_second % 60;
     DrawText(ss.str().c_str(), rec.x + rec.width + MeasureText(ss.str().c_str() , 23) - 20, rec.y, 23, GREEN);
+}
+
+void GuiPlayButton(Vector2 position, Music& music, float radius, Color bgColor, Color fgColor){
+    // Update 
+    static bool isPlayed = true;
+    bool isButtonHover = CheckCollisionPointCircle(position, GetMousePosition(), radius);
+    float point = radius / 3.0f; 
+
+    if(isButtonHover && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        isPlayed = isPlayed ? false : true;
+
+    // Render
+    DrawCircleV(position, radius, isButtonHover ? bgColor: Fade(bgColor, 0.7f));
+
+    if(isPlayed){
+        ResumeMusicStream(music);
+        // Resume Symbol Shape.
+        DrawRectangle(position.x - point, position.y - point, radius/4.0, radius/1.5, fgColor); // Left Rectangle
+        DrawRectangle(position.x + point - (radius/4.0f), position.y - point, radius/4.0, radius/1.5, fgColor); // Right Rectangle
+    }else{
+        // Triangle Symbol Shape.
+        PauseMusicStream(music);
+        DrawTriangle(
+            Vector2{position.x - point, position.y - point},
+            Vector2{position.x - point, position.y + point},
+            Vector2{position.x + point, position.y },
+            fgColor
+        );
+    }
+
 }
