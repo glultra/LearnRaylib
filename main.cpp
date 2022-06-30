@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include <string.h>
+#include <sstream>
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -27,7 +28,13 @@ int main(){
     PlayMusicStream(music);
 
     // Slider rec.
-    Rectangle seek_rec{50, 300, 400, 40};
+    Rectangle seek_rec{50, 400, 300, 10};
+    seek_rec.x = GetScreenWidth() / 2.0f - seek_rec.width/2.0f;
+
+    // Texture2D.
+    Texture2D texture = LoadTexture("./res/images/holyquraan.png");
+    texture.width   = 212;
+    texture.height  = 212;
 
 
     // Target FPS.
@@ -37,6 +44,8 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
+        float tex_centerx = GetScreenWidth()/2.0f  - texture.width/2.0f;
+        float tex_centery = GetScreenWidth()/2.0f  - texture.height/2.0f;
         
         // Update Music Buffer.
         UpdateMusicStream(music);
@@ -46,6 +55,7 @@ int main(){
             // Clear Background
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
+            DrawTexture(texture, tex_centerx, tex_centery - 100, WHITE);
             GuiSliderMusic(seek_rec, music, SKYBLUE);
         EndDrawing();
     }
@@ -77,6 +87,11 @@ void GuiSliderMusic(Rectangle rec, Music& music, Color color){
     float point_radius  = rec.height / 2;
     Vector2 circle_center = Vector2{slider.x + slider.width, slider.y + point_radius};
 
+    // Format: Convert second to minute.
+    // Second to minute -> minute = second/60
+    std::stringstream ss;
+    ss << (int)time_played / 60 << ":"; // first show mins
+    ss << (int)time_played % 60;
 
     // Render
     DrawRectangleRounded(slider, 1.0f, 7, color); // Slider
@@ -84,5 +99,10 @@ void GuiSliderMusic(Rectangle rec, Music& music, Color color){
     DrawRectangleRoundedLines(rec, 3, 1.0f, 7, Fade(color, 0.7f)); // Border
     DrawCircleV(circle_center, point_radius, BLUE);
     DrawCircleLines(circle_center.x, circle_center.y, point_radius, BLACK);
-
+    DrawText(ss.str().c_str(), rec.x - MeasureText(ss.str().c_str() , 23) - 23, rec.y, 23, GREEN);
+    ss.clear();
+    ss = std::stringstream("");
+    ss << (int)max_second / 60 << ":"; // first show mins
+    ss << (int)max_second % 60;
+    DrawText(ss.str().c_str(), rec.x + rec.width + MeasureText(ss.str().c_str() , 23) - 20, rec.y, 23, GREEN);
 }
