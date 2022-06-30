@@ -14,6 +14,14 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
+    // Initialize Audio Device.
+    InitAudioDevice();
+
+    // Music object.
+    Music music = LoadMusicStream("./res/music/wisdom.mp3");
+
+    PlayMusicStream(music);
+
 
     // Target FPS.
     SetTargetFPS(60);
@@ -22,6 +30,9 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
+        
+        // Update Music Buffer.
+        UpdateMusicStream(music);
 
         // <----- RENDER ----->
         BeginDrawing();
