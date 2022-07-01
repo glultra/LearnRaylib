@@ -11,6 +11,7 @@
  bool isButtonHover;
  bool isButtonHover2;
  bool isSliderHover;
+ bool isDarkMode = true;
  int current_item = 1; // default 
 // Gui function protypes.
 void GuiSliderMusic(Rectangle rec, Music& music, Color color);
@@ -61,6 +62,14 @@ int main(){
     back_track.width   = 35;
     back_track.height  = 35;
 
+    Texture2D dark_mode = LoadTexture("./res/images/dark-mode-toggle.png");
+    dark_mode.width   = 101;
+    dark_mode.height  = 52;
+
+    Texture2D light_mode = LoadTexture("./res/images/light-mode-toggle.png");
+    light_mode.width   = 101;
+    light_mode.height  = 52;
+
 
     // Target FPS.
     SetTargetFPS(60);
@@ -71,8 +80,15 @@ int main(){
         // <----- UPDATE ----->
         float tex_centerx = GetScreenWidth()/2.0f  - texture.width/2.0f;
         float tex_centery = GetScreenWidth()/2.0f  - texture.height/2.0f;
+        Vector2 mode_pos = Vector2{GetScreenWidth() - 110.0f, 20.0f};
 
-        if(isButtonHover || isSliderHover || isButtonHover2){
+        bool isModeHover = CheckCollisionPointRec(GetMousePosition(), Rectangle{mode_pos.x, mode_pos.y, 101.0f, 52.0f});
+        if(isModeHover && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
+            // Toggle Button.
+            isDarkMode = isDarkMode ? false : true;
+        }
+
+        if(isButtonHover || isSliderHover || isButtonHover2 || isModeHover){
             SetMouseCursor(MOUSE_CURSOR_POINTING_HAND);
         }else{
             SetMouseCursor(MOUSE_CURSOR_DEFAULT);
@@ -84,14 +100,20 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(Color{13,17,23,255});
+            ClearBackground(isDarkMode ? Color{13,17,23,255} : WHITE);
             // <--- DRAW --->
-            DrawTexture(texture, tex_centerx, tex_centery - 100, WHITE);
-            GuiPlayButton(Vector2{GetScreenWidth()/2.0f, GetScreenHeight()/2.0f + 200}, quraan_lists[current_item], 50, SKYBLUE, WHITE);
-            GuiPlayButton(Vector2{GetScreenWidth()/2.0f + 100, GetScreenHeight()/2.0f + 200}, quraan_lists, next_track, 35, SKYBLUE, WHITE, "next");
-            GuiPlayButton(Vector2{GetScreenWidth()/2.0f - 100, GetScreenHeight()/2.0f + 200}, quraan_lists, back_track, 35, SKYBLUE, WHITE, "back");
-            GuiSliderMusic(seek_rec, quraan_lists[current_item], SKYBLUE);
-            DrawText(surat_names[current_item].c_str(), GetScreenWidth()/2.0f - MeasureText(surat_names[current_item].c_str(), 30)/2.0f, GetScreenHeight()/2.0f + 50, 30, WHITE);
+            DrawTexture(texture, tex_centerx, tex_centery - 100, isDarkMode ? WHITE : GOLD);
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f, GetScreenHeight()/2.0f + 200}, quraan_lists[current_item], 50, isDarkMode ? SKYBLUE : GOLD, isDarkMode ?  WHITE : BLACK);
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f + 100, GetScreenHeight()/2.0f + 200}, quraan_lists, next_track, 35, isDarkMode ? SKYBLUE : GOLD, isDarkMode ?  WHITE : BLACK, "next");
+            GuiPlayButton(Vector2{GetScreenWidth()/2.0f - 100, GetScreenHeight()/2.0f + 200}, quraan_lists, back_track, 35, isDarkMode ? SKYBLUE : GOLD, isDarkMode ?  WHITE : BLACK, "back");
+            GuiSliderMusic(seek_rec, quraan_lists[current_item], isDarkMode ? SKYBLUE : GOLD);
+            DrawText(surat_names[current_item].c_str(), GetScreenWidth()/2.0f - MeasureText(surat_names[current_item].c_str(), 30)/2.0f, GetScreenHeight()/2.0f + 50, 30, isDarkMode ? WHITE : BLACK);
+            if(isDarkMode){
+                DrawTextureV(dark_mode,mode_pos, isModeHover ? SKYBLUE : Fade(SKYBLUE, 0.7f));
+            }
+            else{
+                DrawTextureV(light_mode,mode_pos, isModeHover ? Fade(GOLD, 0.7) : GOLD);
+            }
         EndDrawing();
     }
 
@@ -129,17 +151,21 @@ void GuiSliderMusic(Rectangle rec, Music& music, Color color){
     ss << (int)time_played % 60;
 
     // Render
-    DrawRectangleRounded(slider, 1.0f, 7, isSliderHover ? color : Fade(color, 0.9f)); // Slider
+    if(isDarkMode)
+        DrawRectangleRounded(slider, 1.0f, 7, isSliderHover ? color : Fade(color, 0.9f)); // Slider
+    else
+        DrawRectangleRounded(slider, 1.0f, 7, isSliderHover ? Fade(color, 0.9f) : color); // Slider
+
     DrawRectangleRounded(rec, 1.0f, 7, Fade(color, 0.3f)); // Rec
     DrawRectangleRoundedLines(rec, 3, 1.0f, 7, Fade(color, 0.7f)); // Border
     DrawCircleV(circle_center, point_radius, BLUE);
     DrawCircleLines(circle_center.x, circle_center.y, point_radius, BLACK);
-    DrawText(ss.str().c_str(), rec.x - MeasureText(ss.str().c_str() , 23) - 23, rec.y, 23, WHITE);
+    DrawText(ss.str().c_str(), rec.x - MeasureText(ss.str().c_str() , 23) - 23, rec.y, 23, isDarkMode ?  WHITE : BLACK);
     ss.clear();
     ss = std::stringstream("");
     ss << (int)max_second / 60 << ":"; // first show mins
     ss << (int)max_second % 60;
-    DrawText(ss.str().c_str(), rec.x + rec.width + MeasureText(ss.str().c_str() , 23) - 18, rec.y, 23, WHITE);
+    DrawText(ss.str().c_str(), rec.x + rec.width + MeasureText(ss.str().c_str() , 23) - 18, rec.y, 23, isDarkMode ? WHITE : BLACK);
 }
 
 void GuiPlayButton(Vector2 position, Music& music, float radius, Color bgColor, Color fgColor){
@@ -153,7 +179,10 @@ void GuiPlayButton(Vector2 position, Music& music, float radius, Color bgColor, 
     }
 
     // Render
-    DrawCircleV(position, radius, isButtonHover ? bgColor: Fade(bgColor, 0.7f));
+    if(isDarkMode)
+        DrawCircleV(position, radius, isButtonHover ? bgColor: Fade(bgColor, 0.7f));
+    else
+        DrawCircleV(position, radius, isButtonHover ? Fade(bgColor, 0.7f) : bgColor);
 
     if(isPlayed){
         ResumeMusicStream(music);
@@ -198,7 +227,10 @@ void GuiPlayButton(Vector2 position, Music music[],Texture texture, float radius
     }
 
     // Render
-    DrawCircleV(position, radius, isButtonHover2 ? bgColor: Fade(bgColor, 0.7f));
+    if(isDarkMode)
+        DrawCircleV(position, radius, isButtonHover2 ? bgColor: Fade(bgColor, 0.7f));
+    else
+        DrawCircleV(position, radius, isButtonHover2 ? Fade(bgColor, 0.7f) : bgColor);
 
     DrawTexture(texture, position.x - radius/2.0f, position.y - radius/2.0f, fgColor);
     
