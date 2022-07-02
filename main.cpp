@@ -26,5 +26,8 @@ int main(){
             DrawPolyLinesEx(Vector2{300, 450}, 9, 50, 270 * xValue, 7, GOLD);
         EndDrawing();
     }
+
+    // De Initialize context of opengl.
+    CloseWindow();
     
 }
