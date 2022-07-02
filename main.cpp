@@ -27,5 +27,6 @@ int main(){
             DrawTriangleLines(v1, v2, v3, RED);
         EndDrawing();
     }
-    
+    // De Initialize context of opengl.
+    CloseWindow();
 }
