@@ -43,5 +43,8 @@ int main(){
             // DrawTextureQuad(pink_panther, Vector2{5, 5}, Vector2{5, 5}, Rectangle{0, 0, 600, 600}, WHITE);
         EndDrawing();
     }
+
+    // De Initialize context of opengl.
+    CloseWindow();
     
 }
