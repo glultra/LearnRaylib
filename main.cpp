@@ -26,5 +26,6 @@ int main(){
             DrawLineBezierCubic(Vector2{200, 200}, Vector2{400, 200}, Vector2{250, 300}, Vector2{350, 100}, 3, PURPLE);
         EndDrawing();
     }
-    
+    // De Initialize context of opengl.
+    CloseWindow();
 }
