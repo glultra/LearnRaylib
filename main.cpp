@@ -20,7 +20,6 @@ int main(){
 
         Color blue = BLUE;
         Color skyblue = SKYBLUE;
-        Color darkblue = DARKBLUE;
 
         blue.g *= xValue;
         blue.b *= xValue;
@@ -28,8 +27,6 @@ int main(){
         skyblue.g *= xValue;
         skyblue.b *= xValue;
 
-        darkblue.b *= xValue;
-        darkblue.g *= xValue;
 
         // <----- RENDER ----->
         BeginDrawing();
@@ -37,13 +34,14 @@ int main(){
             // ClearBackground(Color{13,17,23,255});
             ClearBackground(WHITE);
             // <--- DRAW --->
-            DrawPoly(Vector2{300, 300}, 7, 120, 45 * xValue, darkblue);
-            DrawPolyLinesEx(Vector2{300, 300}, 7, 100, 45 * xValue, 27, blue);
-            DrawPolyLinesEx(Vector2{300, 300}, 7, 80, 90 * xValue, 27, skyblue);
-            DrawPolyLinesEx(Vector2{300, 300}, 7, 60, 180 * xValue, 27, blue);
-            DrawPolyLinesEx(Vector2{300, 300}, 7, 40, 300 * xValue, 27, skyblue);
-            DrawPolyLinesEx(Vector2{300, 300}, 7, 20, 270 * xValue, 27, blue);
+            DrawPoly(Vector2{300, 300}, 7, 120, 45 * xValue, blue);
+            DrawPoly(Vector2{300, 300}, 7, 100, 90 * xValue, skyblue);
+            DrawPoly(Vector2{300, 300}, 7, 80, 135 * xValue, blue);
+            DrawPoly(Vector2{300, 300}, 7, 60, 180 * xValue, skyblue);
+            DrawPoly(Vector2{300, 300}, 7, 40, 225 * xValue, blue);
+            DrawPoly(Vector2{300, 300}, 7, 20, 270 * xValue, skyblue);
         EndDrawing();
     }
-    
+    // De Initialize context of opengl.
+    CloseWindow();
 }
