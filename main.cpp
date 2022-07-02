@@ -47,5 +47,6 @@ int main(){
 
         EndDrawing();
     }
-    
+    // De Initialize context of opengl.
+    CloseWindow();
 }
