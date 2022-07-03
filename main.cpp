@@ -13,7 +13,7 @@ int main(){
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
     // Tilemap object.
-    Tilemap tileblock(50, 2, 2);
+    Tilemap tilemap{Vector2{50, 50}, Vector2{2, 2}};
 
     // Target FPS.
     SetTargetFPS(60);
@@ -29,8 +29,7 @@ int main(){
             ClearBackground(Color{13,17,23,255});
             
             // <--- DRAW --->
-            tileblock.Draw();
-
+            tilemap.Draw(BLUE);
         EndDrawing();
     }
 
