@@ -12,11 +12,11 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
-    // Player Object.
-    Rectangle player = {200, 200, 50, 50};
-
     // Tilemap object.
-    Tilemap tileblock(50, 2, 2);
+    Tilemap tileblock{Vector2{50, 50}, Vector2{2, 2}};
+
+    // Player
+    Rectangle player{200, 200, 50, 50};
 
     // Target FPS.
     SetTargetFPS(60);
@@ -25,26 +25,29 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
-        if(IsKeyDown(KEY_W))
-            player.y -= 5.0f;
-        if(IsKeyDown(KEY_S))
-            player.y += 5.0f;
-        if(IsKeyDown(KEY_D))
-            player.x += 5.0f;
+
+        // Player movements.
         if(IsKeyDown(KEY_A))
             player.x -= 5.0f;
+        if(IsKeyDown(KEY_D))
+            player.x += 5.0f;
+        if(IsKeyDown(KEY_S))
+            player.y += 5.0f;
+        if(IsKeyDown(KEY_W))
+            player.y -= 5.0f;
 
-        // Check player Collision.
+        // Checking collision for the tilemap.
         tileblock.CheckCollision(player);
+
 
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
             ClearBackground(Color{13,17,23,255});
+            
             // <--- DRAW --->
-            tileblock.Draw();
-            DrawRectangleRec(player, DARKBLUE);
-
+            tileblock.Draw(ORANGE);
+            DrawRectangleRec(player, BLUE);
         EndDrawing();
     }
 
