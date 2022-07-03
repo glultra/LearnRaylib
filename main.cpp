@@ -9,6 +9,9 @@
 #define SCREEN_TITLE    "Raylib"
 
 int main(){
+    // Enable MSAA 4X.
+    SetConfigFlags(FLAG_MSAA_4X_HINT);
+    
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
