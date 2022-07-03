@@ -1,46 +1,48 @@
-#include <vector>
+#ifndef TILEMAP_H
+#define TILEMAP_H
+
 #include "../deps/include/raylib.h"
+#include <vector>
+
 
 class Tilemap{
     private:
-        const static int SIZE_X = 15; 
-        const static int SIZE_Y = 8; 
-        // Making the tilemap.
+        // Properties.
+        const static int SIZE_X = 15; // Number of the columns.
+        const static int SIZE_Y = 8; // Number of the rows.
         const char tilemap[SIZE_Y][SIZE_X] = {
-            {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
-            {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-            {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-            {'#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' '},
-            {'#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ','#'},
-            {'#',' ',' ',' ','#',' ','#',' ',' ',' ',' ',' ',' ',' ','#'},
-            {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-            {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
+            {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
+            {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+            {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+            {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+            {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+            {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+            {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+            {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
         };
-    public:
+
         std::vector<Rectangle> blocks;
-        Tilemap(float position, float xoffset, float yoffset){
-            // Initialize each block's position.
-            for (int i = 0; i < SIZE_Y; i++) // 8
-            {
-                for (int j = 0; j < SIZE_X; j++) // 15
-                {
-                    if(tilemap[i][j] == ' ') continue;
-                    if(tilemap[i][j] == '#'){
-                        Rectangle block;
-                        block.width     = 50;
-                        block.height    = 50;
-                        block.x = position + (block.width + xoffset)    * j; 
-                        block.y = position + (block.height + yoffset)   * i;
-                        blocks.push_back(block);
-                    }
+        Vector2 offset;
+        Vector2 position;
 
-                }
+        // Private Functions.
+        void InitTilemap();
 
-            }
+    public:
+        // Constructors.
+        Tilemap(Vector2 position, Vector2 offset){
+            SetPosition(position);
+            SetOffset(offset);
+            this->InitTilemap();
+        }
 
-        };
+        // Function protypes.
+        void Draw(Color color);
+        void CheckCollision(Rectangle &player);
+        void SetPosition(Vector2 position);
+        void SetOffset(Vector2 offset);
+};
 
-        // Protype functions.
-        void Draw();
 
-}; 
+
+#endif
