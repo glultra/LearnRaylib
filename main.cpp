@@ -12,34 +12,33 @@ int main(){
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
     // Rectangle object.
-    Rectangle rect = Rectangle{250, 250, 100, 100};
+    Rectangle rec{250, 250, 100, 100};
 
     // Settarget fps.
-    SetTargetFPS(120); // 60 picture per second -> 1s = 60frame
+    SetTargetFPS(60); 
 
     // Render loop.
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
         float time = GetTime();
-        float xValue = std::sin(time); // from -1.0 to +1.0
-        float xValuePos = (xValue / 2.0) + 0.5; // from 0.0 to 1.0
+        float xValue = std::sin(time);
+        float xValuePos = std::sin(time) / 2.0f + 0.5f;
 
-        static int frame_count = 0; 
+        static int frame_count = 0;
         frame_count++;
 
-        rect.x = 550 * xValuePos;
 
+        rec.x = 100 + (xValuePos * 300); 
         
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
-            DrawRectangleRec(rect, RED);
-            DrawText(std::to_string(time).c_str(), 10, 10, 30, GREEN);
-            DrawText("=", 150, 10, 30, GREEN);
-            DrawText(std::to_string(frame_count).c_str(), 200, 10, 30, RED);
+            DrawRectangleRec(rec, BLUE);
+            DrawText(std::to_string((int)time).c_str(), 10, 10, 30, BLUE);
+            DrawText(std::to_string((int)frame_count).c_str(), 100, 10, 30, BLUE);
             DrawFPS(500, 10);
         EndDrawing();
     }
