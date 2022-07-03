@@ -29,6 +29,7 @@ int main(){
 
     // Timer object.
     Timer timer;
+    timer.speed = 1.0f;
 
     // Target FPS.
     SetTargetFPS(60);
@@ -57,7 +58,7 @@ int main(){
         camera.target  = Vector2{player.x, player.y};
 
         // Update Tileblock offset.
-        tileblock.SetOffset(Vector2{50 * timer.xValuePos, 2 });
+        tileblock.SetOffset(Vector2{10 + (50 * ((timer.xValue / 2.0f) + 0.5f)), 2 });
 
         // <----- RENDER ----->
         BeginDrawing();
