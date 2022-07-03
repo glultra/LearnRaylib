@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cmath>
 #include <string.h>
-#include "src/tilemap.h"
 #include <vector>
 
 #define SCREEN_WIDHT    600
