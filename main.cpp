@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cmath>
 #include <string.h>
-#include "src/tilemap.h"
 #include <vector>
 
 #define SCREEN_WIDHT    600
@@ -10,6 +9,9 @@
 #define SCREEN_TITLE    "Raylib"
 
 int main(){
+    // Enable MSAA 4X.
+    SetConfigFlags(FLAG_MSAA_4X_HINT);
+    
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
@@ -61,7 +63,8 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            ClearBackground(Color{13,17,23,255});
+            // ClearBackground(Color{13,17,23,255});
+            ClearBackground(WHITE);
             // <--- DRAW --->
             DrawTexture(light, 170, 10, color_state);
             for (int i = 0; i < buttons.size(); i++)
