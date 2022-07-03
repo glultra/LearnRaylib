@@ -3,8 +3,6 @@
 #include <cmath>
 #include <string.h>
 #include "src/tilemap.h"
-#include "src/timer.h"
-
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -14,22 +12,18 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
-    // Player Object.
-    Rectangle player = {200, 200, 50, 50};
-
     // Tilemap object.
-    Tilemap tileblock(Vector2{0, 0}, Vector2{2,2});
+    Tilemap tileblock{Vector2{50, 50}, Vector2{2, 2}};
 
-    // Camera2D object.
+    // Player
+    Rectangle player{200, 200, 50, 50};
+
+    // Camera 2D.
     Camera2D camera{0};
-    camera.zoom = 1.0f;
-    camera.target  = Vector2{player.x, player.y};
-    camera.offset  = Vector2{GetScreenWidth()/2.0f, GetScreenHeight()/ 2.0f};
-    camera.rotation = 0.0f;
-
-    // Timer object.
-    Timer timer;
-    timer.speed = 1.0f;
+    camera.zoom = 1.0f; // Camera zoom
+    camera.offset = Vector2{GetScreenWidth()/2.0f, GetScreenHeight() / 2.0f}; // Camera focus to the center of the screen.
+    camera.target = Vector2{player.x , player.y}; // Camera follows the player.
+    camera.rotation = 0.0f; 
 
     // Target FPS.
     SetTargetFPS(60);
@@ -38,38 +32,39 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
-        float time = GetTime();
-        // Update timers;
-        timer.UpdateTime(time);
 
-        if(IsKeyDown(KEY_W))
-            player.y -= 5.0f;
-        if(IsKeyDown(KEY_S))
-            player.y += 5.0f;
-        if(IsKeyDown(KEY_D))
-            player.x += 5.0f;
+        // Update camera.
+        camera.target = Vector2{player.x , player.y}; // Camera follows the player.
+        camera.rotation = 45.0f;
+        camera.zoom += GetMouseWheelMove() * 0.05;
+        if(camera.zoom < 0.3f )
+            camera.zoom = 0.3f;
+
+        // Player movements.
         if(IsKeyDown(KEY_A))
             player.x -= 5.0f;
+        if(IsKeyDown(KEY_D))
+            player.x += 5.0f;
+        if(IsKeyDown(KEY_S))
+            player.y += 5.0f;
+        if(IsKeyDown(KEY_W))
+            player.y -= 5.0f;
 
-        // Check player Collision.
+        // Checking collision for the tilemap.
         tileblock.CheckCollision(player);
 
-        // Update camera target.
-        camera.target  = Vector2{player.x, player.y};
-
-        // Update Tileblock offset.
-        tileblock.SetOffset(Vector2{10 + (50 * ((timer.xValue / 2.0f) + 0.5f)), 2 });
 
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
             ClearBackground(Color{13,17,23,255});
+            
             // <--- DRAW --->
             BeginMode2D(camera);
-                tileblock.Draw(BLUE);
-                DrawRectangleRec(player, ORANGE);
+                tileblock.Draw(ORANGE);
+                DrawRectangleRec(player, BLUE);
             EndMode2D();
-            
+            DrawText("positioned text", 0, 0, 30, BLUE);
         EndDrawing();
     }
 
