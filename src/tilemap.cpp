@@ -5,5 +5,5 @@ void Tilemap::Draw(){
     {
         DrawRectangleRec(block, RED);   
     }
-        
-}
+
+} 

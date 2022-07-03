@@ -27,6 +27,7 @@ int main(){
         BeginDrawing();
             // Clear Background
             ClearBackground(Color{13,17,23,255});
+            
             // <--- DRAW --->
             tileblock.Draw();
 

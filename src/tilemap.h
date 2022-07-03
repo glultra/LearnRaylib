@@ -33,14 +33,14 @@ class Tilemap{
                         block.y = position + (block.height + yoffset)   * i;
                         blocks.push_back(block);
                     }
-                    
+
                 }
-                
+
             }
-            
+
         };
 
         // Protype functions.
         void Draw();
 
-};
+}; 
