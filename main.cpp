@@ -12,43 +12,45 @@ int main(){
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
     // Rectangle object.
-    Rectangle rect = Rectangle{250, 250, 100, 100};
+    Rectangle rec{250, 250, 100, 100};
 
-    // DeltaTime property
+    // Movements
     float deltaTime = 0.0f;
     float lastFrame = 0.0f;
+    
+    float velocity = 200.5f; // For moving the player.
+    float speed = 2.0f; // For auto movements.
+
 
     // Settarget fps.
-    SetTargetFPS(60); // 60 picture per second -> 1s = 60frame
+    SetTargetFPS(60); 
 
     // Render loop.
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
         float time = GetTime();
-        float xValue = std::cos(time); // from +1.0 to -1.0
-        float yValue = std::sin(time); // from -1.0 to +1.0
-        float xValuePos = (xValue / 2.0) + 0.5; // from 1.0 to 0.0
-        float yValuePos = (yValue / 2.0) + 0.5; // from 0.0 to 1.0
+        float xValue = std::cos(time * speed);
+        float yValue = std::sin(time * speed);
+        float xValuePos = std::sin(time * speed) / 2.0f + 0.5f;
+
+        static int frame_count = 0;
+        frame_count++;
 
         deltaTime = time - lastFrame;
         lastFrame = time;
 
-        static int frame_count = 0; 
-        frame_count++;
-
-        rect.x = 200 + (xValue * 200 );
-        rect.y = 200 + (yValue * 200 );
-        
+        rec.x = 250 + (xValue * 100); 
+        rec.y = 250 + (yValue * 100); 
+       
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
-            DrawRectangleRec(rect, RED);
-            DrawText(std::to_string(time).c_str(), 10, 10, 30, GREEN);
-            DrawText("=", 150, 10, 30, GREEN);
-            DrawText(std::to_string(frame_count).c_str(), 200, 10, 30, RED);
+            DrawRectangleRec(rec, BLUE);
+            DrawText(std::to_string((int)time).c_str(), 10, 10, 30, BLUE);
+            DrawText(std::to_string((int)frame_count).c_str(), 100, 10, 30, BLUE);
             DrawFPS(500, 10);
         EndDrawing();
     }
