@@ -24,7 +24,7 @@
 > <br> <hr> <br>
 > <div align="center">
 >
-> [![](https://img.shields.io/badge/Triangle-orange?style=social&logo=appveyor)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
+> [![](https://img.shields.io/badge/Triangle-important)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
 > 
 > </div>
 > <p align="center">
