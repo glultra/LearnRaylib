@@ -129,4 +129,48 @@
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/11.gif">
 > </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/FPS-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/12-FPS)
 > 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/12.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Velocity-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/13-Velocity)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/13.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Sine_And_Cosine-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/14-Sine-And-Cosine)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/14.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Timer_Class-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/15-Timer-Class)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/15.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Collision_Recs-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/16-Collision-Recs)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/16.gif">
+> </p>
