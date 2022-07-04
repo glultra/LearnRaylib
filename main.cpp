@@ -74,10 +74,10 @@ int main(){
                 // if Rollevered.
                 if(isHovered && IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
                     // I need to change the color.
-                    DrawRectangleRounded(buttons[i], 0.3, 300, Fade(colors[i], 0.3f));
+                    DrawRectangleRounded(buttons[i], 0.3, 300,  colors[i]);
                 }
                 else
-                    DrawRectangleRounded(buttons[i], 0.3, 300, colors[i]);
+                    DrawRectangleRounded(buttons[i], 0.3, 300, Fade(colors[i], 0.8f));
                 
                 if(isHovered){
                     DrawRectangleRoundedLines(buttons[i],0.3, 300, 4, Fade(WHITE, 0.6));
