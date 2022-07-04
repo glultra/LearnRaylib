@@ -1,15 +1,16 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#include <cmath>
+
 class Timer{
     public:
         // Timer Properties.
+        float xValue;
+        float yValue;
         float deltaTime = 0.0f;
         float lastFrame = 0.0f;
-        float xValue;
-        float xValuePos;
-        float yValue;
-        float yValuePos;
+        float speed = 2.0f; // For auto movements.
         int frame_count = 0;
 
         Timer(){}
@@ -17,5 +18,6 @@ class Timer{
         // Function protypes.
         void UpdateTime(float time);
 };
+
 
 #endif
