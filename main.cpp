@@ -8,7 +8,8 @@
 #define SCREEN_TITLE    "Raylib"
 
 int main(){
-    // Set Anti Aliasing Flags.
+
+    // Enable MSAA 4X.
     SetConfigFlags(FLAG_MSAA_4X_HINT);
 
     // Initialize window.
@@ -38,8 +39,7 @@ int main(){
             ClearBackground(Color{13,17,23,255});
             // <--- DRAW --->
             BeginMode2D(camera);
-                DrawPoly(Vector2{300, 300}, 100, 50, 0, BLUE);
-                DrawLineBezier(Vector2{0,0}, GetMousePosition(), 7, RED);
+                DrawPoly(Vector2{300, 300}, 100, 100, 0, BLUE);
             EndMode2D();
         EndDrawing();
     }
