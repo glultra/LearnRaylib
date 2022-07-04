@@ -186,7 +186,7 @@
 > <br> <hr> <br>
 >  <div align="center">
 >
-> [![](https://img.shields.io/badge/Collided_Rectangle-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/14-Sine-And-Cosine)
+> [![](https://img.shields.io/badge/Collided_Rectangle-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/18-Collided-Rectangle)
 > 
 > </div>
 > <p align="center">
