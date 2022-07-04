@@ -3,10 +3,12 @@
 ### in this repository you can learn how to work with the Graphics and how to program in C++ using raylib.
 #
 ## Branches :
->  
-> [![](https://img.shields.io/badge/Hello_Raylib-green?style=for-the-badge)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
+> <br>
+> <center>
+>
+> [![](https://img.shields.io/badge/Hello_Raylib-lightgreen?style=for-the-badge)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
 > 
-> 
+> </center>
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1-2.png">
 > </p>
