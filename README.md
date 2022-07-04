@@ -1,25 +1,12 @@
-# Raylib course .
-## Welcome to raylib learning repository
-### in this repository you can learn how to work with the Graphics and how to program in C++ using raylib.
-#
-## Branches :
-> <center>  <a href="https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib"> <h2> Hello Raylib </h2> </a> </center>
-> 
-> <p align="center">
->   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1-2.png">
-> </p>
-> <br> <hr> <br>
-> <h2 align="center"> Rectangle </h1>
-> <p align="center">
->   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1.png">
-> </p>
-> <br> <hr> <br>
-> <h2 align="center"> Triangle </h1>
-> <p align="center">
->   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/2.png">
-> </p>
-> <br> <hr> <br>
-> <h2 align="center"> Circle and Ellipse </h1>
-> <p align="center">
->   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1.png">
-> </p>
+
+<a href="#" class="magic-button" title="Hover text">Normal text</a>
+
+<p>Syntax:</p>
+
+<pre>&lt;a ... class="magic-button" title="Hover text"&gt;Normal button text&lt;a&gt;</pre>
+
+<p>Note: Kinda glitchy if the hover text is longer than the normal text.</p>
+
+<p>This can be generated from Markdown, use the following syntax:</p>
+
+<pre>[Normal text](http://example.com/your-url#magic-button "Hover text")
