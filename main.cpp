@@ -60,9 +60,12 @@ int main(){
         }
 
         // Update Camera
-        camera.zoom += GetMouseWheelMoveV().y;
+        camera.zoom += GetMouseWheelMove() * 0.05f;
         camera.target = pixel;
         camera.rotation = std::sin(GetTime()) * 45;
+
+        if(camera.zoom < 0.3f)
+            camera.zoom = 0.3f;
 
         pixels.push_back(pixel);
 
