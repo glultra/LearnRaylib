@@ -27,7 +27,9 @@ int main(){
     PlayMusicStream(music);
 
     // Slider rec.
-    Rectangle seek_rec{50, 300, 400, 40};
+    Rectangle seek_rec{50, 300, 400, 27};
+    seek_rec.x = GetScreenWidth()  / 2.0f - seek_rec.width  / 2.0f;
+    seek_rec.y = GetScreenHeight() / 2.0f - seek_rec.height / 2.0f;
 
 
     // Target FPS.
