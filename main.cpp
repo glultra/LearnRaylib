@@ -64,6 +64,13 @@ int main(){
         camera.target = pixel;
         camera.rotation = std::sin(GetTime()) * 45;
 
+
+        if(IsKeyPressed(KEY_R))
+        {
+            pixel = Vector2{300, 300};
+            pixels.clear();
+        }
+
         if(camera.zoom < 0.3f)
             camera.zoom = 0.3f;
 
