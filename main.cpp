@@ -5,8 +5,8 @@
 #include <sstream>
 
 #define SCREEN_WIDHT    600
-#define SCREEN_HEIGHT   600
-#define SCREEN_TITLE    "Raylib"
+#define SCREEN_HEIGHT   977
+#define SCREEN_TITLE    "Quraan Application"
 
  bool isButtonHover;
  bool isButtonHover2;
@@ -24,6 +24,10 @@ int main(){
     
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
+
+    // Window Options.
+    SetWindowIcon(LoadImage("./res/icons/quraan_icon.png"));
+    SetWindowState(FLAG_WINDOW_RESIZABLE);
 
     // Initialize Audio Device.
     InitAudioDevice();
@@ -78,9 +82,14 @@ int main(){
     while (!WindowShouldClose())
     {
         // <----- UPDATE ----->
+        // Expand slider.
+        seek_rec.x = GetScreenWidth() / 2.0f - seek_rec.width/2.0f;
+        seek_rec.y = (GetScreenHeight() / 2.0f - seek_rec.height/2.0f) + 121;
+
         float tex_centerx = GetScreenWidth()/2.0f  - texture.width/2.0f;
         float tex_centery = GetScreenHeight()/2.0f  - texture.height/2.0f;
         Vector2 mode_pos = Vector2{GetScreenWidth() - 110.0f, 20.0f};
+
 
         bool isModeHover = CheckCollisionPointRec(GetMousePosition(), Rectangle{mode_pos.x, mode_pos.y, 101.0f, 52.0f});
         if(isModeHover && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
