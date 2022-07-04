@@ -6,19 +6,27 @@
 > <br>
 > <div align="center">
 >
-> [![](https://img.shields.io/badge/Hello_Raylib-lightgreen?style=for-the-badge)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
+> [![](https://img.shields.io/badge/Hello_Raylib-red?plastic)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1.png">
+> </p>
+> <br> <hr> <br>
+> <div align="center">
+>
+> [![](https://img.shields.io/badge/Rectangle-ORANGE?style=for-the-badge&logo=appveyor)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
 > 
 > </div>
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1-2.png">
 > </p>
 > <br> <hr> <br>
-> <h2 align="center"> Rectangle </h1>
-> <p align="center">
->   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1.png">
-> </p>
-> <br> <hr> <br>
-> <h2 align="center"> Triangle </h1>
+> <div align="center">
+>
+> [![](https://img.shields.io/badge/Triangle-orange?style=social&logo=appveyor)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
+> 
+> </div>
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/2.png">
 > </p>
