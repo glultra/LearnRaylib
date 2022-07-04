@@ -26,10 +26,15 @@ int main(){
 
         static int interval = 0;
         static int currentDir = 0;
-        const float step = 0.45f;
+        const float step = 1.0f;
         interval++;
-        if(interval % 5 == 0){
+        if(interval % 10 == 0){
             currentDir = GetRandomValue(0, 4);
+        }
+
+        if(IsKeyPressed(KEY_R)){
+            pixel = Vector2{300, 300};
+            pixels.clear();
         }
 
         switch (currentDir)
