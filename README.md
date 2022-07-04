@@ -6,7 +6,7 @@
 > <br>
 > <div align="center">
 >
-> [![](https://img.shields.io/badge/Hello_Raylib-red?plastic)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
+> [![](https://img.shields.io/badge/Hello_Raylib-gray?plastic)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
 > 
 > </div>
 > <p align="center">
@@ -15,7 +15,7 @@
 > <br> <hr> <br>
 > <div align="center">
 >
-> [![](https://img.shields.io/badge/Rectangle-orange?style=for-the-badge&logo=appveyor)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
+> [![](https://img.shields.io/badge/Rectangle-gray?style=for-the-badge&logo=github)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
 > 
 > </div>
 > <p align="center">
