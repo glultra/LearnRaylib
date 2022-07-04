@@ -48,3 +48,22 @@
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/4.gif">
 > </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Polygone-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/5-Polygone)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/5.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Color_Level-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/5-Color-Level)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/5-2.gif">
+> </p>
+> 
