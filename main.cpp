@@ -24,6 +24,9 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
+    // Window Options.
+    SetWindowIcon(LoadImage("./res/icons/quraan_icon.png"));
+
     // Initialize Audio Device.
     InitAudioDevice();
 
