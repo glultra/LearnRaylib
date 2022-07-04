@@ -3,8 +3,8 @@
 #include <cmath>
 #include <string.h>
 
-#define SCREEN_WIDHT    600
-#define SCREEN_HEIGHT   600
+#define SCREEN_WIDHT    1920
+#define SCREEN_HEIGHT   1080
 #define SCREEN_TITLE    "Raylib"
 
 // Gui function protypes.
@@ -16,6 +16,9 @@ int main(){
     
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
+
+    SetWindowState(FLAG_WINDOW_MAXIMIZED);
+    SetWindowState(FLAG_FULLSCREEN_MODE);
 
     // Initialize Audio Device.
     InitAudioDevice();
