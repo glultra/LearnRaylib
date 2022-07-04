@@ -5,7 +5,7 @@
 #include <sstream>
 
 #define SCREEN_WIDHT    600
-#define SCREEN_HEIGHT   600
+#define SCREEN_HEIGHT   877
 #define SCREEN_TITLE    "Raylib"
 
  bool isButtonHover;
@@ -33,7 +33,7 @@ int main(){
     PlayMusicStream(music);
 
     // Slider rec.
-    Rectangle seek_rec{50, 400, 300, 20};
+    Rectangle seek_rec{50, 400, 300, 10};
     seek_rec.x = GetScreenWidth() / 2.0f - seek_rec.width/2.0f;
 
     // Texture2D.
