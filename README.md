@@ -3,7 +3,7 @@
 ### in this repository you can learn how to work with the Graphics and how to program in C++ using raylib.
 #
 ## Branches :
-> <center> <button onclick="window.location.href='https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib';">Hello Raylib</button> </center>
+> <center>  <a href="https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib"> <h2> Hello Raylib </h2> </a> </center>
 > 
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1-2.png">
