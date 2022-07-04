@@ -174,3 +174,30 @@
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/16.gif">
 > </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Collision_Detection-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/17-Collision-Detection)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/17.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Collided_Rectangle-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/14-Sine-And-Cosine)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/18.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Realtime_Collision-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/19-Realtime-Collision)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/19.gif">
+> </p>
