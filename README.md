@@ -7,8 +7,18 @@
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1-2.png">
 > </p>
-#
+> <br> <hr> <br>
 > <h2 align="center"> Rectangle </h1>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1.png">
+> </p>
+> <br> <hr> <br>
+> <h2 align="center"> Triangle </h1>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/2.png">
+> </p>
+> <br> <hr> <br>
+> <h2 align="center"> Circle and Ellipse </h1>
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1.png">
 > </p>
