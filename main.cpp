@@ -79,7 +79,7 @@ int main(){
     {
         // <----- UPDATE ----->
         float tex_centerx = GetScreenWidth()/2.0f  - texture.width/2.0f;
-        float tex_centery = GetScreenWidth()/2.0f  - texture.height/2.0f;
+        float tex_centery = GetScreenHeight()/2.0f  - texture.height/2.0f;
         Vector2 mode_pos = Vector2{GetScreenWidth() - 110.0f, 20.0f};
 
         bool isModeHover = CheckCollisionPointRec(GetMousePosition(), Rectangle{mode_pos.x, mode_pos.y, 101.0f, 52.0f});
