@@ -354,4 +354,77 @@
 > <p align="center">
  https://user-images.githubusercontent.com/77267002/177145329-347cb567-af99-47d6-9e75-e4101de3bdd2.mp4
 > </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/GUI_Slider_Music-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/37-GUI-Slider-Music)
+> 
+> </div>
+> <p align="center">
+https://user-images.githubusercontent.com/77267002/177148613-ba52c3d8-1660-4a70-a2db-8b1fb49be5bd.mp4
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Slider_Design-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/38-Slider-Design)
+> 
+> </div>
+> <p align="center">
+https://user-images.githubusercontent.com/77267002/177152953-f1745ed5-9d2b-48ed-a00f-49b538948444.mp4
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Format_Time-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/39-Format-Time)
+> 
+> </div>
+> <p align="center">
+https://user-images.githubusercontent.com/77267002/177156112-73cb5fcf-9354-421f-9090-12c8720a2744.mp4
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/GUI_Play_Button-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/40-GUI-Play-Button)
+> 
+> </div>
+> <p align="center">
+https://user-images.githubusercontent.com/77267002/177157977-698eab66-80eb-43ab-8d74-986c32400a33.mp4
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Cursor_Types-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/41-Cursor-types)
+> 
+> </div>
+> <p align="center">
+https://user-images.githubusercontent.com/77267002/177159617-aa815bf9-0e88-4be6-be83-e67c42ff3dec.mp4
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Next/Back_Track_Button-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/42-Back/Next-Track-Button)
+> 
+> </div>
+> <p align="center">
+https://user-images.githubusercontent.com/77267002/177185071-e56fe875-7a6b-4af8-a4c1-ee1ca2a98ea6.mp4
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Next/Back_Button_Action-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/43-Back/Next-Button-Action)
+> 
+> </div>
+> <p align="center">
+https://user-images.githubusercontent.com/77267002/177186032-7f725112-4d68-4839-844f-20d3e0afe300.mp4
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Dark/Light_Mode_Toggle-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/44-Dark/Light-Mode-Toggle)
+> 
+> </div>
+> <p align="center">
+https://user-images.githubusercontent.com/77267002/177190171-14bd4a93-b3dc-4f81-b7b2-ddba5b667839.mp4
+> </p>
+
 
