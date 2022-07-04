@@ -4,11 +4,11 @@
 #
 ## Branches :
 > <br>
-> <center>
+> <div align="center">
 >
 > [![](https://img.shields.io/badge/Hello_Raylib-lightgreen?style=for-the-badge)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
 > 
-> </center>
+> </div>
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/1-2.png">
 > </p>
