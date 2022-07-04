@@ -6,7 +6,7 @@
 > <br>
 > <div align="center">
 >
-> [![](https://img.shields.io/badge/Hello_Raylib-gray?style=plastic&logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
+> [![](https://img.shields.io/badge/Hello_Raylib-gray?&logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/1-Hello-Raylib)
 > 
 > </div>
 > <p align="center">
@@ -15,7 +15,7 @@
 > <br> <hr> <br>
 > <div align="center">
 >
-> [![](https://img.shields.io/badge/Rectangle-gray?style=plastic&logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
+> [![](https://img.shields.io/badge/Rectangle-gray?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
 > 
 > </div>
 > <p align="center">
@@ -24,7 +24,7 @@
 > <br> <hr> <br>
 > <div align="center">
 >
-> [![](https://img.shields.io/badge/Triangle-gray/?&style=plastic&logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
+> [![](https://img.shields.io/badge/Triangle-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
 > 
 > </div>
 > <p align="center">
