@@ -22,7 +22,7 @@ int main(){
     InitAudioDevice();
 
     // Music object.
-    Music music = LoadMusicStream("./res/music/wisdom.mp3");
+    Music music = LoadMusicStream("./res/music/quraan/101.mp3");
     // music.looping = false;
 
     PlayMusicStream(music);
