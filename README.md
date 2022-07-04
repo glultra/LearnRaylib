@@ -2,7 +2,7 @@
 
 > Output:
 > <p align="center">
->   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/34.gif">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/34.png">
 > </p>
 > <br>
 > <br>
