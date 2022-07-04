@@ -5,7 +5,7 @@
 #include <sstream>
 
 #define SCREEN_WIDHT    600
-#define SCREEN_HEIGHT   600
+#define SCREEN_HEIGHT   877
 #define SCREEN_TITLE    "Raylib"
 
 // Gui function protypes.
