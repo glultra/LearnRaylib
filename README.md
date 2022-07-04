@@ -93,4 +93,40 @@
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/7-2.gif">
 > </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Text-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/8-Text)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/8.png">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Keyboard_input-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/9-Keyboard-input)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/9.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Mouse_Cursor_input-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/10-Mouse-Cursor-Input)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/10.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Time-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/11-Time)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/11.gif">
+> </p>
 > 
