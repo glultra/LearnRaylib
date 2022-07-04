@@ -15,7 +15,7 @@
 > <br> <hr> <br>
 > <div align="center">
 >
-> [![](https://img.shields.io/badge/Rectangle-ORANGE?style=for-the-badge&logo=appveyor)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
+> [![](https://img.shields.io/badge/Rectangle-orange?style=for-the-badge&logo=appveyor)](https://github.com/glULTRA/LearnRaylib/tree/1-Rectangle)
 > 
 > </div>
 > <p align="center">
