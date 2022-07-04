@@ -273,3 +273,66 @@
 > <p align="center">
 >   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/28.gif">
 > </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Tile_Colors-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/29-Tile-Colors)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/29.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Random_Pixel_Walking-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/30-Random-Pixel-Walking)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/30.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Camera_Zoom_Rotation-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/31-Camera-Zoom-Rotation)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/31.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Snake_Example-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/32-Snake-Example)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/32.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Anit_Aliasing-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/33-Anti-Aliasing)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/33.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Window_Options-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/34-Window-Options)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/34.gif">
+> </p>
+> <br> <hr> <br>
+>  <div align="center">
+>
+> [![](https://img.shields.io/badge/Drag_And_Drop-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/35-Drag-And-Drop)
+> 
+> </div>
+> <p align="center">
+>   <img src="https://github.com/glULTRA/LearnRaylib/blob/z-Course-Resources/course_res/images/35.gif">
+> </p>
