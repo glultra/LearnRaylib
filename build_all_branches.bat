@@ -11,5 +11,3 @@ for /F "tokens=*" %%A in  (branches.txt) do  (
 )
 
 CALL git checkout master
-
-exit
