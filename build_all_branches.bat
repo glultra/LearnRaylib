@@ -10,6 +10,6 @@ for /F "tokens=*" %%A in  (branches.txt) do  (
    Call move main.exe .\examples\%%A.exe
 )
 
-CALL git checkout master
+CALL .\build_all_branches.bat
 
 exit
