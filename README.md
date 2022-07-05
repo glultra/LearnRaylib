@@ -402,7 +402,7 @@ https://user-images.githubusercontent.com/77267002/177159617-aa815bf9-0e88-4be6-
 > <br> <hr> <br>
 >  <div align="center">
 >
-> [![](https://img.shields.io/badge/Next/Back_Track_Button-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/42-Back/Next-Track-Button)
+> [![](https://img.shields.io/badge/Next/Back_Track_Button-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/42-Next-Back-Track-Button)
 > 
 > </div>
 > <p align="center">
@@ -411,7 +411,7 @@ https://user-images.githubusercontent.com/77267002/177185071-e56fe875-7a6b-4af8-
 > <br> <hr> <br>
 >  <div align="center">
 >
-> [![](https://img.shields.io/badge/Next/Back_Button_Action-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/43-Back/Next-Button-Action)
+> [![](https://img.shields.io/badge/Next/Back_Button_Action-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/43-Next-Back-Button-Action)
 > 
 > </div>
 > <p align="center">
@@ -420,7 +420,7 @@ https://user-images.githubusercontent.com/77267002/177186032-7f725112-4d68-4839-
 > <br> <hr> <br>
 >  <div align="center">
 >
-> [![](https://img.shields.io/badge/Dark/Light_Mode_Toggle-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/44-Dark/Light-Mode-Toggle)
+> [![](https://img.shields.io/badge/Dark/Light_Mode_Toggle-gray/?logo=github&label=glULTRA&color=important)](https://github.com/glULTRA/LearnRaylib/tree/44-Dark-Light-Mode-Toggle)
 > 
 > </div>
 > <p align="center">
