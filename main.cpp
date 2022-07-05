@@ -9,7 +9,7 @@ int main(){
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
     // Loafding Texture 2D.
-    Texture2D pink_panther = LoadTexture("./res/images/pink_panther.png");
+    Texture2D pink_panther = LoadTexture("./res/images/pink-panther.png");
 
     // Render loop.
     while (!WindowShouldClose())
