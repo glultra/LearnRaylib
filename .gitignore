@@ -1,4 +1,4 @@
-./build
+build
 *.exe
 .vscode
-
+examples
