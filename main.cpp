@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <cmath>
 
 #define SCREEN_WIDHT    600
 #define SCREEN_HEIGHT   600
@@ -27,8 +28,8 @@ int main(){
             // DrawCircleV(center_pos, 50, GOLD);
             // DrawCircleLines(center_pos.x, center_pos.y, 50, BLUE);
             // DrawCircleGradient(center_pos.x, center_pos.y, 100, SKYBLUE, BLACK);
-            DrawCircleSector(center_pos, 100, 0, 270, 100, MAROON);
-            DrawCircleSectorLines(center_pos, 100, 0, 270, 100, GOLD);
+            DrawCircleSector(center_pos, 100, 0, 270 * std::sin(GetTime()), 100, MAROON);
+            DrawCircleSectorLines(center_pos, 100, 0, 270 * std::sin(GetTime()), 100, GOLD);
             // DrawEllipse(center_pos.x, center_pos.y, 100, 50, Color{100, 120, 255, 255});
             // DrawEllipseLines(center_pos.x, center_pos.y, 100, 50, Color{100, 120, 255, 255});
             DrawRectangleRounded(rec, 0.9f, 100, GOLD);
