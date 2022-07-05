@@ -42,11 +42,11 @@ int main(){
         // Action Movemenet.
         if(IsKeyDown(KEY_W))
             snake_point.y -= 1.0f;
+        else if(IsKeyDown(KEY_S))
+            snake_point.y += 1.0f;
         if(IsKeyDown(KEY_D))
             snake_point.x += 1.0f;
-        if(IsKeyDown(KEY_S))
-            snake_point.y += 1.0f;
-        if(IsKeyDown(KEY_A))
+        else if(IsKeyDown(KEY_A))
             snake_point.x -= 1.0f;
 
         if(IsKeyDown(KEY_A) || IsKeyDown(KEY_D) || IsKeyDown(KEY_W) || IsKeyDown(KEY_S))
