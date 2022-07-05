@@ -10,6 +10,6 @@ for /F "tokens=*" %%A in  (branches.txt) do  (
    Call move main.exe .\examples\%%A.exe
 )
 
-echo "d" | xcopy .\res\ .\examples\res /E -D
+CALL echo "d" | xcopy .\res\ .\examples\res /E -D
 
 exit
