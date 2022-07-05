@@ -2,3 +2,4 @@ build
 *.exe
 .vscode
 examples
+script.bat
