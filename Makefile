@@ -1,5 +1,6 @@
 all: compile run
+
 compile:
-	g++ main.cpp -o main -I ./deps/include/ -L ./deps/lib/ -lraylib -lGL -lm -lpthread -ldl -lrt
+	g++ main.cpp -o main -I ./deps/include/ -L ./deps/lib/ -lraylib -lshell32 -lwinmm -lgdi32 -lopengl32
 run:
-	./main
+	.\main.exe
