@@ -8,13 +8,10 @@ int main(){
     // Initialize window.
     InitWindow(SCREEN_WIDHT, SCREEN_HEIGHT, SCREEN_TITLE);
 
-    // Rectangle Properties.
-    Vector2 rec_pos = Vector2{100, 80};
-    Vector2 rec_size = Vector2{200, 100};
-
-    // Rectangle object.
-    Rectangle rec = Rectangle{400, 100, 100, 200};
-    
+    // Rectangle property.
+    Rectangle rec = Rectangle{ 250, 200, 100, 200};
+    Rectangle rec2 = Rectangle{ 100, 200, 100, 200};
+    Rectangle rec3 = Rectangle{ 400, 200, 100, 200};
 
     // Render loop.
     while (!WindowShouldClose())
@@ -26,20 +23,15 @@ int main(){
             // Clear Background
             ClearBackground(Color{23, 21, 21});
             // <--- DRAW --->
-            DrawRectangle(250, 250, 100, 100, ORANGE);
-            DrawRectangleV(rec_pos, rec_size, BLUE);
-            rec.x = 200;
-            DrawRectangleRec(rec, GREEN);
-            // DrawRectangleLines(rec.x, rec.y, rec.width, rec.height, PURPLE);
-            DrawRectangleLinesEx(rec, 15, SKYBLUE);
-            rec.x = 120;
-            DrawRectanglePro(rec, Vector2{rec.width / 2, rec.height / 2}, 45, GOLD);
-            rec.x = 450;
-            rec.y = 50;
-            DrawRectangleGradientV(rec.x, rec.y, rec.width, rec.height, RED, SKYBLUE);
-            // DrawRectangleGradientH(rec.x, rec.y, rec.width, rec.height, RED, SKYBLUE);
-            rec.y = 350;
-            DrawRectangleGradientEx(rec, PINK, SKYBLUE, RED, GOLD);
+            // DrawRectangle(250, 250, 100, 100, ORANGE);
+            // DrawRectangleV(rec_pos, rec_size, RED);
+            // DrawRectangleRec(rec, GOLD);
+            // DrawRectangleLines(rec.x, rec.y, rec.width, rec.height, LIME);
+            // DrawRectangleLinesEx(rec, 17, PINK);
+            // DrawRectanglePro(rec, Vector2{10, 10}, 45.0f, BLUE);
+            DrawRectangleGradientEx(rec, RED, PINK, ORANGE, BLUE);
+            DrawRectangleGradientH(rec2.x, rec2.y, rec2.width, rec2.height, RED, SKYBLUE);
+            DrawRectangleGradientV(rec3.x, rec3.y, rec3.width, rec3.height, RED, SKYBLUE);
         EndDrawing();
     }
     
