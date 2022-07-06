@@ -31,15 +31,15 @@ int main(){
         // <----- RENDER ----->
         BeginDrawing();
             // Clear Background
-            // ClearBackground(Color{13,17,23,255});
-            ClearBackground(WHITE);
+            ClearBackground(Color{13,17,23,255});
+            // ClearBackground(WHITE);
             // <--- DRAW --->
-            DrawPoly(Vector2{300, 300}, 7, 120, 45 * xValue, blue);
-            DrawPoly(Vector2{300, 300}, 7, 100, 90 * xValue, skyblue);
-            DrawPoly(Vector2{300, 300}, 7, 80, 135 * xValue, blue);
-            DrawPoly(Vector2{300, 300}, 7, 60, 180 * xValue, skyblue);
-            DrawPoly(Vector2{300, 300}, 7, 40, 225 * xValue, blue);
-            DrawPoly(Vector2{300, 300}, 7, 20, 270 * xValue, skyblue);
+            DrawPoly(Vector2{300, 300}, 7, 120, 45 * xValue, skyblue);
+            DrawPoly(Vector2{300, 300}, 7, 100, 90 * xValue, blue);
+            DrawPoly(Vector2{300, 300}, 7, 80, 135 * xValue, skyblue);
+            DrawPoly(Vector2{300, 300}, 7, 60, 180 * xValue, blue);
+            DrawPoly(Vector2{300, 300}, 7, 40, 225 * xValue, skyblue);
+            DrawPoly(Vector2{300, 300}, 7, 20, 270 * xValue, blue);
         EndDrawing();
     }
     // De Initialize context of opengl.
