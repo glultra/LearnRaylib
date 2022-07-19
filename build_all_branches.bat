@@ -6,7 +6,7 @@ if not exist "examples\res" (
 )
 for /F "tokens=*" %%A in  (branches.txt) do  (
    CALL git checkout %%A
-   CALL make compile
+   CALL mingw32-make compile
    Call move main.exe .\examples\%%A.exe
 )
 
